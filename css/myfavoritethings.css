@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /*font-family: Verdana, sans-serif;*/
+  background-color: purple;
+  color: white;
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+.p{
+  color: black;
+}
+
+arrow{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, 0%)
+}
+
+footer{
+  background-color: black;
+}
