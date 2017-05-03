@@ -29,6 +29,27 @@ ol li {
   list-style-type: none;
 }
 
-footer{
+footer {
   background-color: black;
+}
+
+li:hover::after {
+  content: ' ';
+  position: absolute;
+  border: solid 10px transparent;
+  border-top: solid 0px transparent;
+  border-width: 10px;
+  left: 50%;
+  margin-left: -10px;
+  border-color: #222 transparent transparent transparent;
+}
+
+.navbar-default .navbar-collapse {
+  border: nonAZAe;
+  text-align: center;
+}
+
+.icon {
+  display: inline-block;
+  max-height: 100%;
 }
