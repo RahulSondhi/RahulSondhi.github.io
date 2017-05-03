@@ -67,7 +67,7 @@ footer{
   background-color: black;
 }
 
-li:hover::after {
+ul li:hover::after {
   content: ' ';
   position: absolute;
   border: solid 10px transparent;

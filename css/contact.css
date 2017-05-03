@@ -34,7 +34,7 @@ ol li {
   list-style-type: none;
 }
 
-li:hover::after {
+ul li:hover::after {
   content: ' ';
   position: absolute;
   border: solid 10px transparent;
