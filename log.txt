@@ -1,3 +1,9 @@
+commit 34174030a5d5fcac3b2619e5c974d08967582eef
+Author: RahulSondhi <rahul.sondhi@hotmail.com>
+Date:   Wed May 3 15:24:09 2017 -0400
+
+    Created Changelog for site
+
 commit 5bd16476e0bb996abc5af4c3e39405f21c8081d6
 Author: RahulSondhi <rahul.sondhi@hotmail.com>
 Date:   Wed May 3 11:36:17 2017 -0400
