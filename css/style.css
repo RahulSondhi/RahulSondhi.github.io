@@ -1,0 +1,147 @@
+/*@font-face {
+    font-family: "FuturaBook";
+    src: url("/fonts/FuturaPTBook.otf");
+}
+
+@font-face {
+    font-family: "FuturaMedium";
+    src: url("/fonts/FuturaPTMedium.otf");
+}
+
+@font-face {
+    font-family: "FuturaDemi";
+    src: url("/fonts/FuturaPTDemi.otf");
+}
+
+@font-face {
+    font-family: "FuturaBold";
+    src: url("/fonts/FuturaPTBold.otf");
+}
+
+@font-face {
+    font-family: "FuturaHeavy";
+    src: url("/fonts/FuturaPTHeavy.otf");
+}*/
+
+@font-face {
+    font-family: "FuturaBook";
+    src: url("../fonts/Futura Book.ttf");
+}
+
+body {
+    background-color: #000;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.screen {
+    position: absolute;
+    background-color: #87cefa;
+    overflow: hidden;
+}
+
+#citySkyline{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#header{
+    position: absolute;
+    width: 100%;
+    height: 15%;
+    background-color: none;
+}
+
+#logoContainer{
+    position: absolute;
+    width: 20%;
+    height: 25%;
+    left: 40%;
+    top: 15%;
+    border-radius: 100%;
+    background-color: #505050;
+    box-shadow: 0.15625rem 0.15625rem 0.15625rem grey;
+}
+
+#logo{
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    top: 10%;
+    height: 80%;
+}
+
+#logoLeftText{
+    position: absolute;
+    width: 15%;
+    height: 10%;
+    left: 22%;
+    top: 22.5%;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#logoRightText{
+    position: absolute;
+    width: 15%;
+    height: 10%;
+    right: 23%;
+    top: 22.5%;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#menuButtonContainer{
+    position: absolute;
+    width: 7.5%;
+    height: 50%;
+    top: 25%;
+    left: 2%;
+    background-color: #505050;
+    border-radius: 10%;
+    box-shadow: 0.15625rem 0.15625rem 0.15625rem grey;
+}
+
+
+#menuButton{
+    position: absolute;
+    font-size: 1rem;
+    top: 10%;
+    width: 70%;
+    height: 80%;
+    left: 15%;
+    text-align: center;
+    color: white;
+}
+
+#contactContainer{
+    position: absolute;
+    width: 7.5%;
+    height: 50%;
+    top: 25%;
+    right: 2%;
+    background-color: #505050;
+    border-radius: 10%;
+    box-shadow: 0.15625rem 0.15625rem 0.15625rem grey;
+}
+
+#contactButton{
+    position: absolute;
+    font-size: 1rem;
+    top: 10%;
+    width: 70%;
+    height: 80%;
+    left: 15%;
+    text-align: center;
+    color: white;
+}
+
+.button:active{
+  box-shadow: 0 0.15625rem grey;
+  transform: translateY(0.250rem);
+}
