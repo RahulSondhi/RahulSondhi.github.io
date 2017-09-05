@@ -1,4 +1,4 @@
-/*@font-face {
+@font-face {
     font-family: "FuturaBook";
     src: url("/fonts/FuturaPTBook.otf");
 }
@@ -21,11 +21,6 @@
 @font-face {
     font-family: "FuturaHeavy";
     src: url("/fonts/FuturaPTHeavy.otf");
-}*/
-
-@font-face {
-    font-family: "FuturaBook";
-    src: url("../fonts/Futura Book.ttf");
 }
 
 body {
@@ -36,7 +31,6 @@ body {
 
 .screen {
     position: absolute;
-    background-color: #87cefa;
     overflow: hidden;
 }
 
@@ -129,6 +123,7 @@ body {
     background-color: #505050;
     border-radius: 10%;
     box-shadow: 0.15625rem 0.15625rem 0.15625rem grey;
+    z-index: 1;
 }
 
 #contactButton{
@@ -149,10 +144,10 @@ body {
 
 #menuContainer{
     position: absolute;
-    top: 20%;
-    left: 2%;
-    width: 15%;
-    height: 400%;
+    top: 15%;
+    left: -17%;
+    width: 17%;
+    height: 405%;
     z-index: 1;
 }
 
@@ -175,4 +170,27 @@ body {
     font-size: 0.5rem;
     color: white;
     text-align: center;
+}
+
+#navigationContainer{
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    top: 45%;
+    visibility: hidden;
+}
+
+#rightArrow{
+    position: absolute;
+    right: 2%;
+}
+
+#leftArrow{
+    position: absolute;
+    left: 2%;
+}
+
+.arrow{
+    width: 10%;
+    height: 100%;
 }

@@ -1,0 +1,57 @@
+/*Animations*/
+
+.menuOpen{
+    animation: menuOpen 0.75s ease-in-out;
+}
+
+.menuClose{
+    animation: menuClose 0.75s ease-in-out;
+}
+
+.stage0{
+    animation: stage0 1s ease-in-out;
+}
+
+.stage1{
+    animation: stage1 1s ease-in-out;
+}
+
+.stage2{
+    animation: stage2 1s ease-in-out;
+}
+
+.stage3{
+    animation: stage3 1s ease-in-out;
+}
+
+.stage4{
+    animation: stage4 1s ease-in-out;
+}
+
+.stage5{
+    animation: stage5 1s ease-in-out;
+}
+
+.stage6{
+    animation: stage6 1s ease-in-out;`
+}
+
+.stage7{
+    animation: stage7 1s ease-in-out;
+}
+
+.stage8{
+    animation: stage8 1s ease-in-out;
+}
+
+/*Keyframes*/
+
+@keyframes menuOpen {
+    0%   {left: -20%;}
+    100% {left: 0%;}
+}
+
+@keyframes menuClose {
+    0%   {left: 0%;}
+    100% {left: -20%;}
+}
