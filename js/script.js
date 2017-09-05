@@ -1,5 +1,6 @@
 var options = ["About Me", "Experience", "Education", "Volunteering", "Skills", "Awards", "Projects", "Contact Me"];
 var menuAnimation = false;
+var animation = false;
 var index = 0;
 
 $(function() {
@@ -28,14 +29,13 @@ $(function() {
     stageIncrement(1);
   });
 
-  setStage(index);
   setSky();
   setMenu();
 });
 
 
 function openMenu() {
-  if (!menuAnimation) {
+  if (!menuAnimation && !animation) {
     $("#menuButtonContainer").css("visibility", "hidden");
     $(".menuOption").css("visibility", "visible");
     $("#menuContainer").addClass("menuOpen");
@@ -79,51 +79,42 @@ function stageIncrement(increment){
   setStage(index);
 }
 
-function setStage(index) {
+function setStage(pageIndex) {
+  index = pageIndex;
   if(index == 0){
-    $("#skyContainer").css("visibility","visible");
-    $("#navigationContainer").css("visibility","hidden");
+      window.setTimeout(function() {
+        $("#skyContainer").css("visibility","visible");
+      }, 3000);
+    stageAnimate(pageIndex);
   }else{
     $("#skyContainer").css("visibility","hidden");
-    $("#navigationContainer").css("visibility","visible");
+    stageAnimate(pageIndex);
   }
-  switch (index) {
-    case 0:
-      $("")
-      break;
+  console.log(index);
+}
 
-    case 1:
+function stageAnimate(index){
+  animation = true;
+  $("#navigationContainer").css("visibility","hidden");
+  $("#citySkyline").addClass("stage"+index);
+  window.setTimeout(function() {
+      $("#citySkyline").addClass("stageSet"+index);
+      for(var i = 0; i < options.length; i++){
+        if(i != index){
+          $("#citySkyline").removeClass("stageSet"+i);
+        }
+      }
+      $("#citySkyline").removeClass("stage"+(index));
 
-      break;
+      if(index == 0){
+        $("#navigationContainer").css("visibility","hidden");
+        $("#citySkyline").removeClass("stageSet8");
+      }else{
+        $("#navigationContainer").css("visibility","visible");
+      }
 
-    case 2:
-
-      break;
-
-    case 3:
-
-      break;
-
-    case 4:
-
-      break;
-
-    case 5:
-
-      break;
-
-    case 6:
-
-    break;
-
-    case 7:
-
-      break;
-
-    default:
-      break;
-
-  }
+      animation = false;
+  }, 3000);
 }
 
 function setSky() {

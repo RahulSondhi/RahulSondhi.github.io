@@ -9,39 +9,39 @@
 }
 
 .stage0{
-    animation: stage0 1s ease-in-out;
+    animation: stage0 3s ease-in-out;
 }
 
 .stage1{
-    animation: stage1 1s ease-in-out;
+    animation: stage1 3s ease-in-out;
 }
 
 .stage2{
-    animation: stage2 1s ease-in-out;
+    animation: stage2 3s ease-in-out;
 }
 
 .stage3{
-    animation: stage3 1s ease-in-out;
+    animation: stage3 3s ease-in-out;
 }
 
 .stage4{
-    animation: stage4 1s ease-in-out;
+    animation: stage4 3s ease-in-out;
 }
 
 .stage5{
-    animation: stage5 1s ease-in-out;
+    animation: stage5 3s ease-in-out;
 }
 
 .stage6{
-    animation: stage6 1s ease-in-out;`
+    animation: stage6 3s ease-in-out;`
 }
 
 .stage7{
-    animation: stage7 1s ease-in-out;
+    animation: stage7 3s ease-in-out;
 }
 
 .stage8{
-    animation: stage8 1s ease-in-out;
+    animation: stage8 3s ease-in-out;
 }
 
 /*Keyframes*/
@@ -54,4 +54,48 @@
 @keyframes menuClose {
     0%   {left: 0%;}
     100% {left: -20%;}
+}
+
+@keyframes stage0{
+    100% {width: 100%; height: 50%; left: 0; bottom: 0;}
+}
+
+@keyframes stage1{
+    50%   {width: 100%; height: 50%; left: 0; bottom: 0;}
+    100%  {width: 800%; height: 400%; left: 0; bottom: 0;}
+}
+
+@keyframes stage2{
+    50%   {width: 100%; height: 50%; left: 0; bottom: 0;}
+    100%  {width: 800%; height: 400%; left: -120%; bottom: -125%;}
+}
+
+@keyframes stage3{
+    50%   {width: 100%; height: 50%; left: 0; bottom: 0;}
+    100%  {width: 800%; height: 400%; left: -175%; bottom: -235%;}
+}
+
+@keyframes stage4{
+    50%   {width: 100%; height: 50%; left: 0; bottom: 0;}
+    100%  {width: 800%; height: 400%; left: -350%; bottom: 0;}
+}
+
+@keyframes stage5{
+    50%   {width: 100%; height: 50%; left: 0; bottom: 0;}
+    100%  {width: 800%; height: 400%; left: -452.5%; bottom: -155%;}
+}
+
+@keyframes stage6{
+    50%   {width: 100%; height: 50%; left: 0; bottom: 0;}
+    100%  {width: 800%; height: 400%; left: -580%; bottom: -300%;}
+}
+
+@keyframes stage7{
+    50%   {width: 100%; height: 50%; left: 0; bottom: 0;}
+    100%  {width: 800%; height: 400%; left: -653%; bottom: -240%;}
+}
+
+@keyframes stage8{
+    50%   {width: 100%; height: 50%; left: 0; bottom: 0;}
+    100%  {width: 800%; height: 400%; left: -700%; bottom: 0;}
 }

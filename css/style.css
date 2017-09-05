@@ -34,12 +34,12 @@ body {
     overflow: hidden;
 }
 
+#skyContainer{
+    visibility: visible;
+}
+
 #citySkyline{
-    width: 100%;
-    height: 50%;
     position: absolute;
-    left: 0;
-    bottom: 0;
 }
 
 #header{
@@ -148,7 +148,7 @@ body {
     left: -17%;
     width: 17%;
     height: 405%;
-    z-index: 1;
+    z-index: 2;
 }
 
 .menuOption{
@@ -178,6 +178,7 @@ body {
     height: 10%;
     top: 45%;
     visibility: hidden;
+    z-index: 1;
 }
 
 #rightArrow{
@@ -193,4 +194,71 @@ body {
 .arrow{
     width: 10%;
     height: 100%;
+}
+
+/*Stages*/
+
+.stageSet0{
+    width: 100%;
+    height: 50%;
+    left: 0;
+    bottom: 0;
+
+}
+
+.stageSet1{
+    width: 800%;
+    height: 400%;
+    left: 0;
+    bottom: 0;
+
+}
+
+.stageSet2{
+    width: 800%;
+    height: 400%;
+    left: -120%;
+    bottom: -125%;
+}
+
+.stageSet3{
+    width: 800%;
+    height: 400%;
+    left: -175%;
+    bottom: -235%;
+}
+
+.stageSet4{
+    width: 800%;
+    height: 400%;
+    left: -350%;
+    bottom: 0;
+}
+
+.stageSet5{
+    width: 800%;
+    height: 400%;
+    left: -452.5%;
+    bottom: -155%;
+}
+
+.stageSet6{
+    width: 800%;
+    height: 400%;
+    left: -580%;
+    bottom: -300%;
+}
+
+.stageSet7{
+    width: 800%;
+    height: 400%;
+    left: -653%;
+    bottom: -240%;
+}
+
+.stageSet8{
+    width: 800%;
+    height: 400%;
+    left: -700%;
+    bottom: 0;
 }
