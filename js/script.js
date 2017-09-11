@@ -49,7 +49,9 @@ function openMenu() {
 }
 
 function openContact() {
-  setStage(options.length);
+  if(index != 0){
+    stageIncrement(0-index);
+  }
 }
 
 function closeMenu() {
@@ -131,7 +133,7 @@ function setSky() {
 }
 
 function setMenu() {
-  for (var i = 1; i < options.length; i++) {
+  for (var i = 1; i <= options.length; i++) {
     var divToPush = $("<div></div>");
     divToPush.attr("id", "option" + i);
     divToPush.attr("class", "menuOption button");
