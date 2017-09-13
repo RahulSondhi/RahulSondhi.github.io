@@ -71,7 +71,7 @@ function closeMenu() {
 function stageIncrement(increment){
 
   var newIndex= index + increment;
-
+if(!animation){
   if(newIndex <= options.length && newIndex > -1){
     index = newIndex;
   }else{
@@ -79,25 +79,58 @@ function stageIncrement(increment){
   }
 
   setStage(index);
+  }
 }
 
 function setStage(pageIndex) {
   index = pageIndex;
   if(index == 0){
-      window.setTimeout(function() {
+    $("#navigationContainer").css("visibility","hidden");
+    boardAnimateOut();
+    window.setTimeout(function() {
+      stageAnimate(pageIndex);
+    window.setTimeout(function() {
         $("#skyContainer").css("visibility","visible");
       }, 3000);
-    stageAnimate(pageIndex);
+    },2000);
   }else{
+    $("#navigationContainer").css("visibility","hidden");
     $("#skyContainer").css("visibility","hidden");
-    stageAnimate(pageIndex);
+    boardAnimateOut();
+    window.setTimeout(function() {
+      stageAnimate(pageIndex);
+    window.setTimeout(function() {
+        boardAnimateIn(pageIndex);
+          window.setTimeout(function() {
+            $("#navigationContainer").css("visibility","visible");
+        },2000);
+      }, 3000);
+    },2000);
   }
   console.log(index);
 }
 
+function boardAnimateIn(index){
+console.log("IN");
+animation = true;
+window.setTimeout(function() {
+    $("#board").addClass("boardSetIn");
+    animation = false;
+}, 2000);
+}
+
+function boardAnimateOut(){
+console.log("OUT");
+animation = true;
+window.setTimeout(function() {
+  $("#board").addClass("boardSetOut");
+  animation = false;
+}, 2000);
+}
+
 function stageAnimate(index){
+if(!animation){
   animation = true;
-  $("#navigationContainer").css("visibility","hidden");
   $("#citySkyline").addClass("stage"+index);
   window.setTimeout(function() {
       $("#citySkyline").addClass("stageSet"+index);
@@ -109,14 +142,11 @@ function stageAnimate(index){
       $("#citySkyline").removeClass("stage"+(index));
 
       if(index == 0){
-        $("#navigationContainer").css("visibility","hidden");
         $("#citySkyline").removeClass("stageSet8");
-      }else{
-        $("#navigationContainer").css("visibility","visible");
       }
-
       animation = false;
   }, 3000);
+}
 }
 
 function setSky() {

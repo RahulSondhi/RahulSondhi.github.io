@@ -10,8 +10,10 @@ $(window).resize(function () {
 // Resize the window
 function resizeWindow() {
     // Get window width and height
-    var w = $(window).width();
-    var h = $(window).height();
+    // var w = $(window).width();
+    // var h = $(window).height();
+    var w = window.innerWidth;
+    var h = window.innerHeight;;
     // If the aspect ratio is greater than or equal to 4:3, fix height and set width based on height
     if ((w / h) >= 4 / 3) {
         stageHeight = h;
@@ -48,25 +50,25 @@ function resizeWindow() {
         'width': w,
         'height': coverTop,
         'top': 0,
-        'left': 0,
+        'left': 0
     });
     $("#coverBottom").css({
         'width': w,
         'height': coverBottom,
         'top': h - coverBottom,
-        'left': 0,
+        'left': 0
     });
     $("#coverLeft").css({
         'width': coverLeft,
         'height': h,
         'top': 0,
-        'left': 0,
+        'left': 0
     });
     $("#coverRight").css({
         'width': coverRight,
         'height': h,
         'top': 0,
-        'left': w - coverRight,
+        'left': w - coverRight
     });
 
     // Resize corner border radii based on stage height
@@ -87,13 +89,6 @@ function resizeWindow() {
         'border-bottom-right-radius': cornerSize2 + "px"
     });
 
-    var cornerSize3 = .015 * stageHeight;
-    $(".thumbType").css({
-        "border-radius": "0px " + cornerSize3 + "px 0px 0px",
-        "-moz-border-radius": "0px " + cornerSize3 + "px 0px 0px",
-        "-webkit-border-radius": "0px " + cornerSize3 + "px 0px 0px"
-    });
-
     // Resize text based on stage height
     // To give a class a certain font size, assign it the class "fs-X" where X is an integer between 1 and 1000. 1000 is the height of the screen.
     // New font resize loop
@@ -104,18 +99,11 @@ function resizeWindow() {
             'font-size': s + "px"
         });
     }
-    $("html").css("font-size", (stageHeight / 20) + "px");
 
-    // Resize the stripes
-    var stripeSize = stageHeight * .05;
-    var str = stripeSize + "% " + stripeSize + "%"
-    $(".stripes").css({
-        'background-size': stripeSize
-    });
+    if(navigator.userAgent.search("Firefox") >= 0){
+        $("html").css("font-size", (stageHeight / 25) + "px");
+    }else{
+        $("html").css("font-size", (stageHeight / 20) + "px");
+    }
 
-    // Border
-    var borderSize = stageHeight * .003;
-    $("#fillInAnswer").css({
-        "border": borderSize + "px solid white"
-    });
 }
