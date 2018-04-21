@@ -1,48 +1,45 @@
 <html>
 
 <head>
-  <title>Project Hooligan</title>
+  <meta charset="UTF-8">
+  <title>Projecy Hooligan</title>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/sky.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
   <script src="js/resize.js"></script>
   <script src="js/script.js"></script>
+  <link rel="stylesheet" href="css/sky.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  
   <div id="stage" class="screen">
-
     <div id="header">
-      <div id="menuButtonContainer" class="button">
-        <div id="menuButton">&#9776;</div>
+      <div id="navbar">
+        <div id="navbarContactMe" class="navbarItem">Contact Me</div>
+        <div id="navbarResume" class="navbarItem">Resume</div>
+        <div id="navbarProjects" class="navbarItem">Projects</div>
+        <div id="navbarAboutMe" class="navbarItem">About Me</div>
       </div>
+    </div>
+    <div id="content">
+      <div id="contentPanel">
+        <div id="contentPanelAbout">
 
-      <div id="contactContainer" class="button">
-        <div id="contactButton">&#8962;</div>
+        </div>
+        <div id="contentPanelResume">
+
+        </div>
+        <div id="contentPanelProjects">
+
+        </div>
+        <div id="contentPanelContact">
+
+        </div>
       </div>
-
-      <div id="menuContainer"></div>
+      <div id="contentPanelBG"></div>
+      <div id="city"><img src="media/city.svg" id="cityImg"></div>
     </div>
-
-    <div id="sky">
-      <div id="skyContainer">
-      <div id="logoContainer" class="button">
-        <img src="media/logo.png" id="logo">
-      </div>
-      <div id="logoLeftText">Project</div>
-      <div id="logoRightText">Hooligan</div>
-    </div>
-    <div id="navigationContainer">
-      <img src="media/rightArrow.svg" id="rightArrow" class="arrow">
-      <img src="media/leftArrow.svg" id="leftArrow" class="arrow">
-    </div>
-    </div>
-
-    <div id="pageBackground">
-      <img src="media/city_skyline.svg" id="citySkyline" class="stageSet0">
-    </div>
+    <div id="footer"></div>
   </div>
 </body>
 

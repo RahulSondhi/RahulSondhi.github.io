@@ -1,277 +1,123 @@
-@font-face {
-    font-family: "FuturaBook";
-    src: url("/fonts/FuturaPTBook.otf");
-}
-
-@font-face {
-    font-family: "FuturaMedium";
-    src: url("/fonts/FuturaPTMedium.otf");
-}
-
-@font-face {
-    font-family: "FuturaDemi";
-    src: url("/fonts/FuturaPTDemi.otf");
-}
-
-@font-face {
-    font-family: "FuturaBold";
-    src: url("/fonts/FuturaPTBold.otf");
-}
-
-@font-face {
-    font-family: "FuturaHeavy";
-    src: url("/fonts/FuturaPTHeavy.otf");
+html {
+  background-color: black;
+  user-select: none;
+  -webkit-user-select: none;
+  text-decoration: none;
+  outline: none;
 }
 
 body {
-    background-color: #000;
-    user-select: none;
-    -webkit-user-select: none;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: #000000;
 }
 
 .screen {
-    position: absolute;
-    overflow: hidden;
+  position: absolute;
+  background-color: white;
+  overflow: hidden;
+  z-index: 1;
 }
 
-#skyContainer{
-    visibility: visible;
-    display: inline-flex;
+.hidden {
+  display: none;
 }
 
-#citySkyline{
-    position: absolute;
+#cityImg {
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+  z-index: 0;
 }
 
-#header{
-    position: absolute;
-    width: 100%;
-    height: 15%;
-    background-color: none;
+#header {
+  height: 8%;
+  width: 100%;
+  top: 0;
+  position: absolute;
+  left: 0;
+  background-color: #0F1626;
+  border-bottom: #FF3B3F;
+  border-width: 0 0 0.25rem 0;
+  border-style: solid;
 }
 
-#logoContainer{
-    position: absolute;
-    width: 20%;
-    height: 25%;
-    left: 40%;
-    top: 15%;
-    border-radius: 100%;
-    background-color: #505050;
-    box-shadow: 0.15625rem 0.15625rem 0.15625rem grey;
+#content {
+  height: 86.6%;
+  width: 100%;
+  top: 8.4%;
+  position: absolute;
+  left: 0;
 }
 
-#logo{
-    position: absolute;
-    width: 80%;
-    left: 10%;
-    top: 10%;
-    height: 80%;
+#footer {
+  height: 5%;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  background-color: #0F1626;
+  border-top: #FF3B3F;
+  border-width: 0.25rem 0 0 0;
+  border-style: solid;
 }
 
-#logoLeftText{
-    position: absolute;
-    width: 15%;
-    height: 10%;
-    left: 22%;
-    top: 22.5%;
-    color: white;
-    text-align: center;
-    font-size: 1.5rem;
+#contentPanel {
+  width: 90%;
+  left: 5%;
+  position: absolute;
+  height: 75%;
+  top: 10%;
+  border-radius: 1rem;
+  border-style: solid;
+  border-width: 0.5rem;
+  z-index: 1;
+  border-color: #FF3B3F;
 }
 
-#logoRightText{
-    position: absolute;
-    width: 15%;
-    height: 10%;
-    right: 23%;
-    top: 22.5%;
-    color: white;
-    text-align: center;
-    font-size: 1.5rem;
+#contentPanelBG{
+  width: 90%;
+  left: 5%;
+  position: absolute;
+  height: 75%;
+  top: 10%;
+  background-color: #EFEFEF;
+  border-radius: 1rem;
+  border-style: solid;
+  border-width: 0.5rem;
+  z-index: 1;
+  border-color: #FF3B3F;
+  opacity: 0.5;
 }
 
-#menuButtonContainer{
-    position: absolute;
-    width: 7.5%;
-    height: 50%;
-    top: 25%;
-    left: 2%;
-    background-color: #505050;
-    border-radius: 10%;
-    box-shadow: 0.15625rem 0.15625rem 0.15625rem grey;
-    z-index: 1000;
+#contentPanelAbout,
+#contentPanelResume,
+#contentPanelProjects,
+#contentPanelContact{
+  width: 100%;
+  height: 100%;
 }
 
-
-#menuButton{
-    position: absolute;
-    font-size: 1rem;
-    top: 10%;
-    width: 70%;
-    height: 80%;
-    left: 15%;
-    text-align: center;
-    color: white;
+#navbar{
+  position: absolute;
+  width: 38%;
+  height: 100%;
+  right: 0%;
+  top: 0;
 }
 
-#contactContainer{
-    position: absolute;
-    width: 7.5%;
-    height: 50%;
-    top: 25%;
-    right: 2%;
-    background-color: #505050;
-    border-radius: 10%;
-    box-shadow: 0.15625rem 0.15625rem 0.15625rem grey;
-    z-index: 1;
+.navbarItem{
+  width: 18%;
+  padding: 3%;
+  height: 47%;
+  float: right;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
 }
 
-#contactButton{
-    position: absolute;
-    font-size: 1rem;
-    top: 10%;
-    width: 70%;
-    height: 80%;
-    left: 15%;
-    text-align: center;
-    color: white;
-}
-
-.button:active{
-  box-shadow: 0 0.15625rem grey;
-  transform: translateY(0.250rem);
-}
-
-#menuContainer{
-    position: absolute;
-    top: 15%;
-    left: -17%;
-    width: 17%;
-    height: 405%;
-    z-index: 2;
-}
-
-.menuOption{
-    position: relative;
-    width: 100%;
-    height: 12%;
-    margin-top: 5%;
-    background-color: #505050;
-    border-radius: 10%;
-    box-shadow: 0.15625rem 0.15625rem 0.15625rem grey;
-}
-
-.menuText{
-    position: absolute;
-    height: 15%;
-    width: 80%;
-    top: 30%;
-    left: 10%;
-    font-size: 0.5rem;
-    color: white;
-    text-align: center;
-}
-
-#navigationContainer{
-    position: absolute;
-    width: 100%;
-    height: 10%;
-    top: 45%;
-    visibility: hidden;
-    z-index: 1;
-}
-
-#rightArrow{
-    position: absolute;
-    right: 2%;
-}
-
-#leftArrow{
-    position: absolute;
-    left: 2%;
-}
-
-.arrow{
-    width: 10%;
-    height: 100%;
-}
-
-/*Stages*/
-
-.stageSet0{
-    width: 100%;
-    height: 50%;
-    left: 0;
-    bottom: 0;
-
-}
-
-.stageSet1{
-    width: 800%;
-    height: 400%;
-    left: 0;
-    bottom: 0;
-
-}
-
-.stageSet2{
-    width: 800%;
-    height: 400%;
-    left: -120%;
-    bottom: -125%;
-}
-
-.stageSet3{
-    width: 800%;
-    height: 400%;
-    left: -175%;
-    bottom: -235%;
-}
-
-.stageSet4{
-    width: 800%;
-    height: 400%;
-    left: -350%;
-    bottom: 0;
-}
-
-.stageSet5{
-    width: 800%;
-    height: 400%;
-    left: -452.5%;
-    bottom: -155%;
-}
-
-.stageSet6{
-    width: 800%;
-    height: 400%;
-    left: -580%;
-    bottom: -300%;
-}
-
-.stageSet7{
-    width: 800%;
-    height: 400%;
-    left: -653%;
-    bottom: -240%;
-}
-
-.stageSet8{
-    width: 800%;
-    height: 400%;
-    left: -700%;
-    bottom: 0;
-}
-
-/*Board*/
-
-.boardSetIn{
-  bottom: 15%;
-  visibility: visible;
-}
-
-.boardSetOut{
-bottom: -15%;
-visibility: none;
+.navbarItem:hover,
+.navbarItem:active{
+  background-color: #33456d;
 }
