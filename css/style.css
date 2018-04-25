@@ -121,3 +121,10 @@ body {
 .navbarItem:active{
   background-color: #33456d;
 }
+
+#progress{
+  width: 100%;
+  font-size: 3rem;
+  color: #FF3B3F;
+  text-align: center;
+}
