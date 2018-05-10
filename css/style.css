@@ -15,7 +15,6 @@ body {
 
 .screen {
   position: absolute;
-  background-color: white;
   overflow: hidden;
   z-index: 1;
 }
@@ -24,71 +23,49 @@ body {
   display: none;
 }
 
-#cityImg {
-  width: 100%;
-  bottom: 0;
-  position: absolute;
-  z-index: 0;
-}
-
 #header {
   height: 8%;
   width: 100%;
   top: 0;
   position: absolute;
   left: 0;
-  background-color: #0F1626;
-  border-bottom: #FF3B3F;
-  border-width: 0 0 0.25rem 0;
-  border-style: solid;
+}
+
+#bg{
+  width: 101%;
+  height: 102%;
+  top: -1%;
+  position: absolute;
+  left: -1%;
+  margin: 0;
+  padding: 0;
+  background-color: #5D5C61;
+}
+
+#bgPic{
+  width: 100%;
+  height: 100%;
+  background-image: url("../media/rahul1.jpg");
+  background-size: contain;
+  background-position: center;
 }
 
 #content {
-  height: 86.6%;
+  height: 92%;
   width: 100%;
   top: 8.4%;
   position: absolute;
   left: 0;
 }
 
-#footer {
-  height: 5%;
-  width: 100%;
-  bottom: 0;
-  position: absolute;
-  left: 0;
-  background-color: #0F1626;
-  border-top: #FF3B3F;
-  border-width: 0.25rem 0 0 0;
-  border-style: solid;
-}
-
 #contentPanel {
-  width: 90%;
-  left: 5%;
+  width: 96%;
+  left: 1%;
   position: absolute;
-  height: 75%;
-  top: 10%;
+  height: 90%;
+  top: 3%;
   border-radius: 1rem;
-  border-style: solid;
-  border-width: 0.5rem;
   z-index: 100;
-  border-color: #FF3B3F;
-}
-
-#contentPanelBG{
-  width: 90%;
-  left: 5%;
-  position: absolute;
-  height: 75%;
-  top: 10%;
-  background-color: #EFEFEF;
-  border-radius: 1rem;
-  border-style: solid;
-  border-width: 0.5rem;
-  z-index: 1;
-  border-color: #FF3B3F;
-  opacity: 0.5;
 }
 
 #contentPanelAbout,
@@ -104,27 +81,29 @@ body {
   width: 38%;
   height: 100%;
   right: 0%;
-  top: 0;
+  top: 0%;
+  margin-top: -1%;
+  background-color: rgba(115, 149, 174, 0.4);
+  border-style: solid;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-width: 0.5rem;
+  border-color: rgba(93, 92, 97, 0.4);
 }
 
 .navbarItem{
-  width: 18%;
-  padding: 3%;
-  height: 47%;
-  float: right;
-  text-align: center;
-  color: white;
-  font-size: 1.5rem;
+  width: 25%;
+      padding-top: 2.75%;
+      height: 78%;
+      float: right;
+      text-align: center;
+      color: white;
+      font-size: 2rem;
+      border-width: 2rem;
 }
 
+.selectedNavbar,
 .navbarItem:hover,
 .navbarItem:active{
-  background-color: #33456d;
-}
-
-#progress{
-  width: 100%;
-  font-size: 3rem;
-  color: #FF3B3F;
-  text-align: center;
+  background-color: rgba(85, 122, 149, 0.4);
 }

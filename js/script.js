@@ -4,7 +4,6 @@ $(function() {
 
 function startEmUp(){
   window.location.hash = "about";
-  setSky();
   setNavbar();
   reloadUpdate();
 }
@@ -23,6 +22,10 @@ function hideAllPages(){
   $("#contentPanelResume").removeClass("hidden");
   $("#contentPanelProjects").removeClass("hidden");
   $("#contentPanelContact").removeClass("hidden");
+  $("#navbarAboutMe").removeClass("selectedNavbar");
+  $("#navbarResume").removeClass("selectedNavbar");
+  $("#navbarProjects").removeClass("selectedNavbar");
+  $("#navbarContactMe").removeClass("selectedNavbar");
   //***********************************************//
   $("#contentPanelAbout").addClass("hidden");
   $("#contentPanelResume").addClass("hidden");
@@ -56,24 +59,21 @@ function updateUrl(){
   hideAllPages();
   switch(parse[0]){
     case "#contact":
+      $("#navbarContactMe").addClass("selectedNavbar");
       $("#contentPanelContact").removeClass("hidden");
       break;
     case "#projects":
+      $("#navbarProjects").addClass("selectedNavbar");
       $("#contentPanelProjects").removeClass("hidden");
       break;
     case "#resume":
+      $("#navbarResume").addClass("selectedNavbar");
       $("#contentPanelResume").removeClass("hidden")
       break;
     case "#about":
+      $("#navbarAboutMe").addClass("selectedNavbar");
       $("#contentPanelAbout").removeClass("hidden");
       break;
     default: break;
   }
-}
-
-function setSky() {
-  $("#content").addClass("sky-gradient-"+new Date().getHours());
-  window.setTimeout(function() {
-      setSky();
-  }, 6000);
 }
