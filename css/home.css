@@ -1,0 +1,92 @@
+#profileHome {
+  margin-left: 0.25%;
+  margin-top: 2%;
+  width: 35%;
+  height: 50%;
+  border-radius: 1rem;
+  color: white;
+  z-index: 1;
+  background-color: rgba(93, 92, 97, 0.4);
+}
+
+#profileGallery {
+  margin-left: 45%;
+  margin-top: 2%;
+  width: 20%;
+  height: 98%;
+  border-radius: 1rem;
+}
+
+#projectGit {
+  top: 5%;
+  left: 5%;
+  position: absolute;
+  width: 90%;
+  height: 90%;
+}
+
+.titleBig {
+  font-size: 5.5rem;
+  padding: 5%;
+  width: 90%;
+  height: 12%;
+  text-align: center;
+}
+
+#profileHome hr {
+  border-width: 0.2rem;
+  font-size: 0.5rem;
+  margin-top: 0%;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.titleSub {
+  font-size: 3.5rem;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  height: 10%;
+  text-align: center;
+}
+
+.titleSub2 {
+  margin-top: 10%;
+  font-size: 3.3rem;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  height: 10%;
+  text-align: center;
+}
+
+.titleSub3 {
+  margin-top: 3%;
+  font-size: 2.5rem;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-left: 5%;
+  width: 90%;
+  height: 6%;
+  text-align: left;
+}
+
+.socialLogo {
+  height: 20%;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 5%;
+  padding: 0;
+  opacity: 0.8;
+}
+
+.socialLogoPic {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.socialLogoPic:active {
+  transform: translateY(0.250rem);
+}

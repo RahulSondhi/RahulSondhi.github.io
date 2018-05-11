@@ -20,7 +20,7 @@ body {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 #header {
@@ -31,7 +31,7 @@ body {
   left: 0;
 }
 
-#bg{
+#bg {
   width: 101%;
   height: 102%;
   top: -1%;
@@ -42,7 +42,7 @@ body {
   background-color: #5D5C61;
 }
 
-#bgPic{
+#bgPic {
   width: 100%;
   height: 100%;
   background-image: url("../media/rahul1.jpg");
@@ -59,7 +59,7 @@ body {
 }
 
 #contentPanel {
-  width: 96%;
+  width: 98%;
   left: 1%;
   position: absolute;
   height: 90%;
@@ -68,19 +68,42 @@ body {
   z-index: 100;
 }
 
-#contentPanelAbout,
-#contentPanelResume,
-#contentPanelProjects,
-#contentPanelContact{
+#contentPanelHome, #contentPanelResume, #contentPanelProjects, #contentPanelContact, #contentPanelAbout {
   width: 100%;
   height: 100%;
+  margin-bottom: 20%;
 }
 
-#navbar{
+#contentPanelHome, #contentPanelAbout {
+  display: flex;
+}
+
+#contentPanelResume, #contentPanelProjects, #contentPanelContact{
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.pageTransition {
+  -webkit-animation: pageTrans 3s;
+  /* Safari 4.0 - 8.0 */
+  animation: pageTrans 3s;
+}
+
+@keyframes pageTrans {
+  0% {
+    margin-top: 0;
+    opacity: 1;
+  }
+  100% {
+    margin-top: -68.5%;
+    opacity: 0;
+  }
+}
+
+#navbar {
   position: absolute;
-  width: 38%;
+  width: 50%;
   height: 100%;
-  right: 0%;
+  right: -0.7%;
   top: 0%;
   margin-top: -1%;
   background-color: rgba(115, 149, 174, 0.4);
@@ -91,19 +114,46 @@ body {
   border-color: rgba(93, 92, 97, 0.4);
 }
 
-.navbarItem{
-  width: 25%;
-      padding-top: 2.75%;
-      height: 78%;
-      float: right;
-      text-align: center;
-      color: white;
-      font-size: 2rem;
-      border-width: 2rem;
+.navbarItem {
+  width: 20%;
+  padding-top: 2.75%;
+  height: 78%;
+  float: right;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  border-width: 2rem;
 }
 
-.selectedNavbar,
-.navbarItem:hover,
-.navbarItem:active{
+.selectedNavbar, .navbarItem:hover, .navbarItem:active {
   background-color: rgba(85, 122, 149, 0.4);
+}
+
+#goingDown {
+  width: 20%;
+  left: 40%;
+  bottom: 0%;
+  height: 8%;
+  position: absolute;
+  display: flex;
+  opacity: 0.7;
+}
+
+.downArrow {
+  height: 90%;
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 13%;
+}
+
+#downArrowText {
+  color: white;
+  font-size: 3rem;
+  width: 70%;
+  height: 90%;
+  text-align: center;
+}
+
+#goingDown:hover, #goingDown:active {
+  opacity: 1;
 }

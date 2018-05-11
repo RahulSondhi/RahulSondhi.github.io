@@ -1,41 +1,59 @@
-#profileAboutMe {
-  left: 0.25%;
-  top: 2%;
-  width: 35%;
-  height: 50%;
-  position: absolute;
+#aboutMeLeft{
+  margin-left: 0.25%;
+  margin-top: 2%;
+  width: 25%;
+  height: 98%;
   border-radius: 1rem;
   color: white;
   z-index: 1;
-  background-color: rgba(93, 92, 97, 0.4);
+  flex-direction: column;
+  display: flex;
 }
 
-#profileGallery {
-  right: -1.25%;
-  top: 2%;
-  width: 20%;
+#aboutMeRight{
+  margin-left: 50%;
+  margin-top: 2%;
+  width: 25%;
   height: 98%;
-  position: absolute;
   border-radius: 1rem;
+  color: white;
+  z-index: 1;
+  flex-direction: column;
+  display: flex;
 }
 
-#projectGit {
-  top: 5%;
-  left: 5%;
-  position: absolute;
-  width: 90%;
-  height: 90%;
-}
-
-.titleBig {
-  font-size: 5.5rem;
+.question{
+  width: 80%;
+  margin-left: 1%;
+  margin-bottom: 2.5%;
+  height: 15%;
   padding: 5%;
+  padding-top: 10%;
+  margin-top: 2.5%;
+  border-radius: 1rem;
+  border-style: ridge;
+  border-width: 1rem;
+  border-color: rgba(85, 122, 149, 0.8);
+  background-color: rgba(115, 149, 174, 0.8);
+  display: flex;
+  flex-direction: column;
+}
+
+.questionText{
+  font-size: 1.7rem;
   width: 90%;
-  height: 12%;
+  margin-left: 5%;
   text-align: center;
 }
 
-#profileAboutMe hr {
+.questionAnswer{
+  width: 100%;
+  padding-top: 2%;
+  padding-left: 5%;
+  font-size: 1.5rem;
+}
+
+.question hr{
   border-width: 0.2rem;
   font-size: 0.5rem;
   margin-top: 0%;
@@ -43,52 +61,7 @@
   margin-left: 5%;
 }
 
-.titleSub {
-  font-size: 3.5rem;
-  margin-left: 5%;
-  margin-right: 5%;
-  width: 90%;
-  height: 10%;
-  text-align: center;
-}
-
-.titleSub2 {
-  margin-top: 10%;
-  font-size: 3.3rem;
-  margin-left: 5%;
-  margin-right: 5%;
-  width: 90%;
-  height: 10%;
-  text-align: center;
-}
-
-.titleSub3 {
-  margin-top: 3%;
-  font-size: 2.5rem;
-  margin-left: 5%;
-  margin-right: 5%;
-  padding-left: 1%;
-  width: 90%;
-  height: 6%;
-  text-align: left;
-}
-
-.socialLogo {
-  height: 20%;
-  width: 50%;
-  margin-left: 25%;
-  margin-right: 25%;
-  margin-top: 5%;
-  padding: 0;
-  opacity: 0.8;
-}
-
-.socialLogoPic{
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
-
-.socialLogoPic:active{
-  transform: translateY(0.250rem);
+#aboutMeLeft,
+#aboutMeRight{
+  /* background-color: rgba(255, 255, 255, 0.6); */
 }
