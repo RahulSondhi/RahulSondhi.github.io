@@ -4,6 +4,7 @@ html {
   -webkit-user-select: none;
   text-decoration: none;
   outline: none;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 body {
@@ -74,11 +75,11 @@ body {
   margin-bottom: 20%;
 }
 
-#contentPanelHome, #contentPanelAbout {
+#contentPanelHome, #contentPanelAbout, #contentPanelContact{
   display: flex;
 }
 
-#contentPanelResume, #contentPanelProjects, #contentPanelContact{
+#contentPanelResume, #contentPanelProjects{
   background-color: rgba(255, 255, 255, 0.4);
 }
 

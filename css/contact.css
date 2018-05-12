@@ -1,0 +1,73 @@
+#contactLeft{
+  margin-left: 0.25%;
+  margin-top: 2%;
+  width: 25%;
+  height: 98%;
+  border-radius: 1rem;
+  color: white;
+  z-index: 1;
+  flex-direction: column;
+  display: flex;
+}
+
+#contactRight{
+  margin-left: 45%;
+  margin-top: 2%;
+  width: 30%;
+  height: 60%;
+  border-radius: 1rem;
+  color: white;
+  z-index: 1;
+  flex-direction: column;
+  display: flex;
+  background-color: rgba(93, 92, 97, 0.85);
+}
+
+#contactRight hr{
+  border-width: 0.2rem;
+  font-size: 0.5rem;
+  margin-top: 0%;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.titleContact {
+  font-size: 4.25rem;
+      padding: 5%;
+      padding-bottom: 1%;
+      width: 90%;
+      height: 14%;
+      text-align: center;
+}
+
+
+.titleContactInfo {
+  font-size: 2.4rem;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2.5%;
+  width: 90%;
+  height: 7%;
+  text-align: center;
+}
+
+.titleSites {
+  font-size: 4rem;
+      padding: 5%;
+      padding-bottom: 1%;
+      width: 90%;
+      height: 14%;
+      text-align: center;
+}
+
+.titleSiteInfo{
+  font-size: 2.4rem;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2.5%;
+  width: 90%;
+  height: 7%;
+  text-align: center;
+  color:  #B1A296;
+  text-decoration: underline;
+}
