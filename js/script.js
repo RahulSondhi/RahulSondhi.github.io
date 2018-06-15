@@ -1,7 +1,6 @@
 var animating = false;
 
 $(function() {
-  setPage();
 
   $(window).on("unload", function(e) {
     updateUrl();
@@ -28,7 +27,7 @@ $(function() {
   });
 });
 
-function startEmUp() {
+function pageConfig() {
     setNavbar();
     if (window.location.hash == "" || window.location.hash == "#") {
       window.location.hash = "home";
@@ -179,7 +178,7 @@ function updateUrl() {
 }
 
 function settingHash(section) {
-  console.log(section)
+  console.log("Section: "+section);
   switch (section) {
     case "contact":
       window.location.hash = "contact";

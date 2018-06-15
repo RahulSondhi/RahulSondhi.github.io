@@ -1,19 +1,23 @@
+$(function() {
+  setPage();
+});
+
 function setPage() {
   console.log("Welcome to my console!");
   console.log("Loading jsons:");
   fetchContact();
 }
 
-function fetchContact() {
+function fetchContact(){
 
   $.ajax({
-    dataType: "json",
-    url: "json/contact.json"
+    url: "https://rahulsondhi.github.io/json/contact.json",
+    dataType: "json"
   }).done(function(data) {
     console.log("Contacts Loaded!");
     var contacts = JSON.parse(data);
     setContact(contacts)
-    fetchProjects();
+    // fetchProjects();
   });
 
 }
@@ -80,8 +84,8 @@ function setContact(contacts){
 function fetchProjects() {
 
   $.ajax({
+    url: "https://rahulsondhi.github.io/json/projects.json",
     dataType: "json",
-    url: "json/projects.json"
   }).done(function(data) {
     console.log("Projects Loaded!");
     console.log(data);
@@ -94,7 +98,7 @@ function fetchQuestions() {
 
   $.ajax({
     dataType: "json",
-    url: "json/questions.json"
+    url: "https://rahulsondhi.github.io/json/questions.json"
   }).done(function(data) {
     console.log("Questions Loaded!");
     var questions = JSON.parse(data);
@@ -130,11 +134,11 @@ function fetchResume() {
 
   $.ajax({
     dataType: "json",
-    url: "json/resume.json"
+    url: "https://rahulsondhi.github.io/json/resume.json"
   }).done(function(data) {
     console.log("Resume Loaded!");
     console.log(data);
-    startEmUp();
+    pageConfig();
   });
 
 }
