@@ -1,7 +1,7 @@
 function setPage() {
   console.log("Welcome to my console!");
   console.log("Loading jsons:");
-  return fetchContact();
+  fetchContact();
 }
 
 function fetchContact() {
@@ -13,7 +13,7 @@ function fetchContact() {
     console.log("Contacts Loaded!");
     var contacts = JSON.parse(data);
     setContact(contacts)
-    return fetchProjects();
+    fetchProjects();
   });
 
 }
@@ -85,7 +85,7 @@ function fetchProjects() {
   }).done(function(data) {
     console.log("Projects Loaded!");
     console.log(data);
-    return fetchQuestions();
+    fetchQuestions();
   });
 
 }
@@ -99,7 +99,7 @@ function fetchQuestions() {
     console.log("Questions Loaded!");
     var questions = JSON.parse(data);
     setQuestion(questions)
-    return fetchResume();
+    fetchResume();
   });
 
 }
@@ -134,7 +134,7 @@ function fetchResume() {
   }).done(function(data) {
     console.log("Resume Loaded!");
     console.log(data);
-    return true;
+    startEmUp();
   });
 
 }

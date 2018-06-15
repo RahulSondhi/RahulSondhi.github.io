@@ -1,7 +1,7 @@
 var animating = false;
 
 $(function() {
-  startEmUp();
+  setPage();
 
   $(window).on("unload", function(e) {
     updateUrl();
@@ -29,14 +29,12 @@ $(function() {
 });
 
 function startEmUp() {
-  if(setPage()){
     setNavbar();
     if (window.location.hash == "" || window.location.hash == "#") {
       window.location.hash = "home";
     } else {
       updateUrl();
     }
-  }
 }
 
 function hideAllPages() {
