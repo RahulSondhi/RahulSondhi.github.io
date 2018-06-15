@@ -1,0 +1,28 @@
+{
+  "questions": [
+    {
+      "questionText":"What is my Major?",
+      "questionAnswer":"Computer Science B.S & <br> Minor in Business"
+    },
+    {
+      "questionText":"Where Am I Studying?",
+      "questionAnswer":"Stony Brook University <br> New York"
+    },
+    {
+      "questionText":"When Am I Graduating?",
+      "questionAnswer":"May 2020"
+    },
+    {
+      "questionText":"What are my Interests?",
+      "questionAnswer":"Computer Security, Business Management, Game Development"
+    },
+    {
+      "questionText":"What Are My Hobbies?",
+      "questionAnswer":"Mentoring, Robotics, Stock Trading, Mountain Biking, Photography, Video Games"
+    },
+    {
+      "questionText":"Programming Languages?",
+      "questionAnswer":"HTML, CSS, JS, Java, Python, PHP, SQL, Bash"
+    }
+  ]
+}

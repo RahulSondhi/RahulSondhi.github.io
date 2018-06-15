@@ -29,11 +29,13 @@ $(function() {
 });
 
 function startEmUp() {
-  setNavbar();
-  if (window.location.hash == "" || window.location.hash == "#") {
-    window.location.hash = "home";
-  } else {
-    updateUrl();
+  if(setPage()){
+    setNavbar();
+    if (window.location.hash == "" || window.location.hash == "#") {
+      window.location.hash = "home";
+    } else {
+      updateUrl();
+    }
   }
 }
 
