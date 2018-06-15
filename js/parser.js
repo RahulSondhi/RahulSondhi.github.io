@@ -12,37 +12,16 @@ function fetchContact(){
 
   $.ajax({
     url: "https://rahulsondhi.github.io/json/contact.json",
-    dataType: "json"
+    error: function(jqXHR, textStatus, errorThrown){  console.log(jqXHR, textStatus, errorThrown);}
   }).done(function(data) {
     console.log("Contacts Loaded!");
-    var contacts = JSON.parse(data);
-    setContact(contacts)
-    // fetchProjects();
+    setContact(data)
+    fetchProjects();
   });
 
 }
 
 function setContact(contacts){
-  var contactsToAdd = questions.questions;
-  for(var i=0; i < 6; i++){
-    var questionDiv = $("<div></div>");
-    questionDiv.attr("class","question");
-    var questionDivText = $("<div></div>");
-    questionDivText.attr("class","questionTest");
-    questionDivText.html(questionsToAdd[i].questionText);
-    var questionDivAnswer = $("<div></div>");
-    questionDivAnswer.attr("class","questionAnswer");
-    questionDivAnswer.html(questionsToAdd[i].questionAnswer);
-    questionDiv.append(questionDivText);
-    questionDiv.append("<hr>");
-    questionDiv.append(questionDivAnswer);
-    if(i<3){
-      $("aboutMeLeft").append(questionDiv);
-    }else{
-      $("aboutMeRight").append(questionDiv);
-    }
-  }
-
   var emails = contacts.emails;
   var sites = contacts.sites;
   var socialMedia = contacts.socialMedia;
@@ -58,8 +37,8 @@ function setContact(contacts){
   for(var i = 0; i < sites.length;i++){
     var site = $("<a></a>");
     site.attr("class","titleSiteInfo");
-    site.attr("onclick","{ window.open('"+site[i].link+"','_blank');}");
-    site.html(site[i].title);
+    site.attr("onclick","{ window.open('"+sites[i].link+"','_blank');}");
+    site.html(sites[i].title);
 
     $("#sites").append(site);
   }
@@ -75,17 +54,15 @@ function setContact(contacts){
 
     socialLogo.append(socialLogoImg);
     $("#contactLeft").append(socialLogo);
-    $("#profileGallery").append(socialLogo)
   }
-
+  $("#profileGallery").append($("#contactLeft").html());
 
 }
 
 function fetchProjects() {
 
   $.ajax({
-    url: "https://rahulsondhi.github.io/json/projects.json",
-    dataType: "json",
+    url: "https://rahulsondhi.github.io/json/projects.json"
   }).done(function(data) {
     console.log("Projects Loaded!");
     console.log(data);
@@ -97,12 +74,10 @@ function fetchProjects() {
 function fetchQuestions() {
 
   $.ajax({
-    dataType: "json",
     url: "https://rahulsondhi.github.io/json/questions.json"
   }).done(function(data) {
     console.log("Questions Loaded!");
-    var questions = JSON.parse(data);
-    setQuestion(questions)
+    setQuestion(data)
     fetchResume();
   });
 
@@ -114,7 +89,7 @@ function setQuestion(questions){
     var questionDiv = $("<div></div>");
     questionDiv.attr("class","question");
     var questionDivText = $("<div></div>");
-    questionDivText.attr("class","questionTest");
+    questionDivText.attr("class","questionText");
     questionDivText.html(questionsToAdd[i].questionText);
     var questionDivAnswer = $("<div></div>");
     questionDivAnswer.attr("class","questionAnswer");
@@ -123,9 +98,9 @@ function setQuestion(questions){
     questionDiv.append("<hr>");
     questionDiv.append(questionDivAnswer);
     if(i<3){
-      $("aboutMeLeft").append(questionDiv);
+      $("#aboutMeLeft").append(questionDiv);
     }else{
-      $("aboutMeRight").append(questionDiv);
+      $("#aboutMeRight").append(questionDiv);
     }
   }
 }
@@ -133,7 +108,6 @@ function setQuestion(questions){
 function fetchResume() {
 
   $.ajax({
-    dataType: "json",
     url: "https://rahulsondhi.github.io/json/resume.json"
   }).done(function(data) {
     console.log("Resume Loaded!");

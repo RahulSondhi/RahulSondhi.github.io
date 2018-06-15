@@ -71,3 +71,8 @@
   color:  #B1A296;
   text-decoration: underline;
 }
+
+#sites{
+  flex-direction: column;
+  display: flex;
+}
