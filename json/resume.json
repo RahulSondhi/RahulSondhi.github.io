@@ -1,5 +1,61 @@
 {
-  "resume": [
-
+  "jobs": [
+    {
+      "title":"Full Stack Developer",
+      "company":"Stony Brook University",
+      "startDate":"May 2017",
+      "endDate":"Present",
+      "description":[
+        "Made interactive educational tools for helping improve learning experience in the classroom",
+        "Created an interactive e-textbook covering topics such as Physical Therapy and ECG Interpretation",
+        "Upgraded a video quizzing software that is used for both classroom teaching and faculty training",
+        "Made a game that used Watson APIs to let kids spawn and play with an animated character in VR",
+        "Created a self-assessment program for students to assess their writing skills in their writing courses",
+        "Languages used were HTML, CSS, JavaScript, jQuery, PHP, Node, C# and Aframe"
+      ],
+      "img":"media/TLL.svg"
+    },
+    {
+      "title":"Mentor",
+      "company":"kidOYO",
+      "startDate":"Feb 2018",
+      "endDate":"Present",
+      "description":[
+        "Taught computer science to kids from ages K-12 in a camp environment",
+        "Created challenges and lessons to teach students web development skills",
+        "Taught how to use APIs/Libraries like: JQuery, CardoDB, Firebase, Google Maps, and etc",
+        "Worked with languages like: Java, Python, HTML/CSS/JS, PHP"
+      ],
+      "img":"media/kidOYO.svg"
+    }
+  ],
+  "education":[
+    {
+      "school":"Stony Brook University",
+      "degree":"Bachelor’s Degree Computer Science",
+      "minor":"Minor: Business Management",
+      "startDate":"2016",
+      "endDate":"2020",
+      "activities":[
+        "Stony Brook Computing Society (Vice President 2018-2019 , Secretary 2017 - 2018)",
+        "DoIT Student Advisory Board (Student Board Member 2017-2018)"
+      ],
+      "img":"media/school.svg"
+    },
+    {
+      "school":"Syosset High School",
+      "degree":"Advanced Regents Diploma with Honors",
+      "minor":"",
+      "startDate":"2012",
+      "endDate":"2016",
+      "activities":[
+        "Robotics Team (Team Lead 2013-2016)",
+        "Robotics Club (President 2013-2016)",
+        "Technology Club (Active Member)",
+        "Web Design Club (Active Member)",
+        "National Honor Society"
+      ],
+      "img":"media/school.svg"
+    }
   ]
 }

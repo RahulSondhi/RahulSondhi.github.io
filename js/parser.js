@@ -116,3 +116,7 @@ function fetchResume() {
   });
 
 }
+
+function setResume(){
+
+}
