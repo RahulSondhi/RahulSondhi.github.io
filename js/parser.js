@@ -62,13 +62,76 @@ function setContact(contacts){
 function fetchProjects() {
 
   $.ajax({
-    url: "https://rahulsondhi.github.io/json/projects.json"
-  }).done(function(data) {
-    console.log("Projects Loaded!");
-    console.log(data);
-    fetchQuestions();
+    url: "https://api.github.com/users/RahulSondhi"
+  }).done(function(user) {
+    console.log("Github User Loaded!");
+    $.ajax({
+      url: "https://api.github.com/users/RahulSondhi/repos"
+    }).done(function(data) {
+      console.log("Github Projects Loaded!");
+      setProjects(data,user);
+      fetchQuestions();
+    });
   });
 
+}
+
+function setProjects(projects,user){
+  console.log(projects,user);
+
+  var gitContainer = $("<div></div>");
+  gitContainer.attr("id","projectGit");
+
+  var gitContainerTitle = $("<div></div>");
+  gitContainerTitle.attr("id","projectGitTitle");
+  gitContainerTitle.html("Github Projects");
+
+  var userWindow = $("<div></div>");
+  userWindow.attr("id","userContainer");
+
+  var userWindowImg = $("<img></img>");
+  userWindowImg.attr("src",user.avatar_url);
+  userWindowImg.attr("class","gitIcon");
+
+  var userWindowTitle = $("<div></div>");
+  userWindowTitle.attr("class","gitTitle");
+  userWindowTitle.html(user.login);
+
+  var userWindowBio = $("<div></div>");
+  userWindowBio.attr("class","gitBio");
+  userWindowBio.html(user.bio);
+
+  userWindow.append(userWindowImg);
+  userWindow.append(userWindowTitle);
+  userWindow.append(userWindowBio);
+
+  $("#contentPanelProjects").append(userWindow);
+  $("#contentPanelProjects").append(gitContainerTitle);
+  $("#contentPanelProjects").append(gitContainer);
+
+  for(var i=0; i < projects.length; i++){
+    var projectDiv = $("<div></div>");
+    projectDiv.attr("class","projectContainer");
+    projectDiv.attr("onclick","{window.open('"+projects[i].html_url+"','_blank');}")
+
+    var projectDivTitle = $("<div></div>");
+    projectDivTitle.attr("class","projectTitle");
+    projectDivTitle.html(projects[i].name);
+
+    var projectDivDescription = $("<div></div>");
+    projectDivDescription.attr("class","projectDescription");
+    projectDivDescription.html(projects[i].description);
+
+    var projectDivLanguage = $("<div></div>");
+    projectDivLanguage.attr("class","projectLanguage");
+    projectDivLanguage.html(projects[i].language);
+
+    projectDiv.append(projectDivTitle);
+    projectDiv.append(projectDivDescription);
+    projectDiv.append(projectDivLanguage);
+
+    $("#projectGit").append(projectDiv);
+  }
 }
 
 function fetchQuestions() {

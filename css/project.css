@@ -1,0 +1,97 @@
+#projectGit {
+  top: 13%;
+  left: 25%;
+  position: absolute;
+  width: 72.5%;
+  height: 60%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+}
+
+#projectGitTitle{
+  top: 5%;
+  left: 25%;
+  position: absolute;
+  width: 72.5%;
+  height: 8%;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+#userContainer{
+  top: 5%;
+  left: 2.5%;
+  position: absolute;
+  width: 20%;
+  height: 70%;
+  background-color: white;
+}
+
+.projectContainer{
+  width: 30%;
+  background-color: white;
+  height: 75%;
+  margin: 1%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  border-style: solid;
+  border-width: 0.1rem;
+  border-color: #d1d5da;
+}
+
+.projectTitle{
+  font-size: 2rem;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  height: 13%;
+  width: 90%;
+}
+
+.projectLanguage{
+  margin-left: 5%;
+  height: 14%;
+  width: 90%;
+  font-size: 1.5rem;
+}
+
+.projectDescription{
+  margin-left: 5%;
+  font-size: 1.5rem;
+  width: 90%;
+  margin-bottom: 8%;
+  height: 55%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.gitIcon{
+  width: 90%;
+  margin: 5%;
+  border-width: 0.3rem;
+  border-style: solid;
+  border-color: #d1d5da;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.gitTitle{
+  margin: 0;
+  margin-top: 5%;
+  font-size: 2.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.gitBio{
+  margin: 0;
+  margin-top: 3%;
+  font-size: 1.6rem;
+  width: 84%;
+  margin-left: 8%;
+  margin-bottom: 5%;
+}

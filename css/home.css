@@ -17,14 +17,6 @@
   border-radius: 1rem;
 }
 
-#projectGit {
-  top: 5%;
-  left: 5%;
-  position: absolute;
-  width: 90%;
-  height: 90%;
-}
-
 .titleBig {
   font-size: 5.5rem;
   padding: 5%;
