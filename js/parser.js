@@ -212,14 +212,26 @@ function setResume(data){
       experienceDescription.append("- "+jobs[i].description[x]+"<br>");
     }
 
-    experience.append(experienceTitle);
-    experience.append(experienceCompany);
-    experience.append(experiencePhoto);
-    experience.append(experienceDate);
+    var experienceTop = $("<div></div>");
+    experienceTop.attr("class","jobTop");
+
+    var experienceTopLeft = $("<div></div>");
+    experienceTopLeft.attr("class","jobTopLeft");
+
+    experienceTopLeft.append(experienceTitle);
+    experienceTopLeft.append(experienceCompany);
+    experienceTopLeft.append(experienceDate);
+
+    experienceTop.append(experienceTopLeft);
+    experienceTop.append(experiencePhoto);
+
+    experience.append(experienceTop);
     experience.append(experienceDescription);
 
     jobHolder.append(experience);
   }
+
+  ////////////////////////////////////////////////////////////////////
 
   for(var i = 0;i<schools.length;i++){
     var experience = $("<div></div>");
@@ -247,6 +259,7 @@ function setResume(data){
 
     var experienceDescription = $("<div></div>");
     experienceDescription.attr("class","schoolActivities");
+    experienceDescription.append("<u>Activities</u><br>");
 
     for( var x = 0; x < schools[i].activities.length; x++){
       experienceDescription.append("- "+schools[i].activities[x]+"<br>");
@@ -275,13 +288,3 @@ function setResume(data){
   $("#contentPanelResume").append(educationHolder);
   $("#contentPanelResume").append(jobHolder);
 }
-
-// <!-- <div id="contentPanelResumeJobs">
-//   <div class="contentPanelResumeJobsContainer">
-//     <div class="contentPanelResumeJobsTitle"></div>
-//     <div class="contentPanelResumeJobsCompany"></div>
-//     <div class="contentPanelResumeJobsPhoto"></div>
-//     <div class="contentPanelResumeJobsDate"></div>
-//     <div class="contentPanelResumeJobsSummary"></div>
-//   </div>
-// </div> -->

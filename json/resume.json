@@ -6,11 +6,11 @@
       "startDate":"May 2017",
       "endDate":"Present",
       "description":[
-        "Made interactive educational tools for helping improve learning experience in the classroom",
-        "Created an interactive e-textbook covering topics such as Physical Therapy and ECG Interpretation",
-        "Upgraded a video quizzing software that is used for both classroom teaching and faculty training",
-        "Made a game that used Watson APIs to let kids spawn and play with an animated character in VR",
-        "Created a self-assessment program for students to assess their writing skills in their writing courses",
+        "Made interactive educational tools for improving learning experience in the classroom",
+        "Created an interactive e-textbook for topics like Physical Therapy and ECG Interpretation",
+        "Upgraded a video quizzing software that is used for both teaching and faculty training",
+        "Made a game using Watson APIs to let kids spawn and play with a character in VR",
+        "Created a self-assessment program that assess students writing skills in their courses",
         "Languages used were HTML, CSS, JavaScript, jQuery, PHP, Node, C# and Aframe"
       ],
       "img":"media/TLL.svg"
