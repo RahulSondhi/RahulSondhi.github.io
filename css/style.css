@@ -79,10 +79,6 @@ body {
   display: flex;
 }
 
-#contentPanelResume{
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
 .pageTransition {
   -webkit-animation: pageTrans 3s;
   /* Safari 4.0 - 8.0 */

@@ -13,7 +13,7 @@
         "Created a self-assessment program that assess students writing skills in their courses",
         "Languages used were HTML, CSS, JavaScript, jQuery, PHP, Node, C# and Aframe"
       ],
-      "img":"media/TLL.svg"
+      "img":"media/work.svg"
     },
     {
       "title":"Mentor",
@@ -26,7 +26,7 @@
         "Taught how to use APIs/Libraries like: JQuery, CardoDB, Firebase, Google Maps, and etc",
         "Worked with languages like: Java, Python, HTML/CSS/JS, PHP"
       ],
-      "img":"media/kidOYO.svg"
+      "img":"media/work.svg"
     }
   ],
   "education":[
