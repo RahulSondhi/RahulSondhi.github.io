@@ -1,0 +1,93 @@
+#contentPanelResume{
+  display: flex;
+}
+
+.educationHolder{
+    margin: 0;
+    width: 35%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.jobHolder{
+  margin: 0;
+  margin-left: 5%;
+  width: 60%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.schoolContainer{
+  width: 90%;
+  height: 40%;
+  margin: 5%;
+  border-radius: 1rem;
+  border-style: ridge;
+  border-width: 0.5rem;
+  border-color: rgba(85, 122, 149, 0.8);
+  background-color: rgba(115, 149, 174, 0.8);
+  display: flex;
+  flex-direction: column;
+}
+
+.schoolTop{
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 1%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+}
+
+.schoolTopLeft{
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+.schoolSchool{
+  font-size: 2rem;
+}
+
+.schoolDegree,
+.schoolMinor{
+  font-size: 1.75rem;
+}
+
+.schoolDate{
+  font-size: 1.5rem;
+}
+
+.schoolPhoto{
+  width: 20%;
+  height: 90%;
+  margin-left: 2.5%;
+}
+
+.schoolActivities{
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 1%;
+  font-size: 1.2rem;
+}
+
+
+.jobContainer{
+  width: 90%;
+  height: 30%;
+  margin: 1.5%;
+  margin-left: 5%;
+  border-radius: 1rem;
+  border-style: ridge;
+  border-width: 0.5rem;
+  border-color: rgba(85, 122, 149, 0.8);
+  background-color: rgba(115, 149, 174, 0.8);
+  display: flex;
+  flex-direction: column;
+}

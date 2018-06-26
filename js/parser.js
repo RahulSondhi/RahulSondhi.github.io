@@ -77,14 +77,9 @@ function fetchProjects() {
 }
 
 function setProjects(projects,user){
-  console.log(projects,user);
 
   var gitContainer = $("<div></div>");
   gitContainer.attr("id","projectGit");
-
-  var gitContainerTitle = $("<div></div>");
-  gitContainerTitle.attr("id","projectGitTitle");
-  gitContainerTitle.html("Github Projects");
 
   var userWindow = $("<div></div>");
   userWindow.attr("id","userContainer");
@@ -106,7 +101,6 @@ function setProjects(projects,user){
   userWindow.append(userWindowBio);
 
   $("#contentPanelProjects").append(userWindow);
-  $("#contentPanelProjects").append(gitContainerTitle);
   $("#contentPanelProjects").append(gitContainer);
 
   for(var i=0; i < projects.length; i++){
@@ -174,12 +168,120 @@ function fetchResume() {
     url: "https://rahulsondhi.github.io/json/resume.json"
   }).done(function(data) {
     console.log("Resume Loaded!");
-    console.log(data);
+    setResume(data);
     pageConfig();
   });
 
 }
 
-function setResume(){
+function setResume(data){
+  console.log(data);
+  var jobs = data.jobs;
+  var schools = data.education;
 
+  var educationHolder = $("<div></div>");
+  educationHolder.attr("class","educationHolder");
+
+
+  var jobHolder = $("<div></div>");
+  jobHolder.attr("class","jobHolder");
+
+  for(var i = 0;i<jobs.length;i++){
+    var experience = $("<div></div>");
+    experience.attr("class","jobContainer");
+
+    var experienceTitle = $("<div></div>");
+    experienceTitle.attr("class","jobTitle");
+    experienceTitle.html(jobs[i].title);
+
+    var experienceCompany = $("<div></div>");
+    experienceCompany.attr("class","jobCompany");
+    experienceCompany.html(jobs[i].company);
+
+    var experiencePhoto = $("<img></img>");
+    experiencePhoto.attr("class","jobPhoto");
+    experiencePhoto.attr("src",jobs[i].img);
+
+    var experienceDate = $("<div></div>");
+    experienceDate.attr("class","jobDate");
+    experienceDate.html(jobs[i].startDate + " - " + jobs[i].endDate);
+
+    var experienceDescription = $("<div></div>");
+    experienceDescription.attr("class","jobDescription");
+    for( var x = 0; x < jobs[i].description.length; x++){
+      experienceDescription.append("- "+jobs[i].description[x]+"<br>");
+    }
+
+    experience.append(experienceTitle);
+    experience.append(experienceCompany);
+    experience.append(experiencePhoto);
+    experience.append(experienceDate);
+    experience.append(experienceDescription);
+
+    jobHolder.append(experience);
+  }
+
+  for(var i = 0;i<schools.length;i++){
+    var experience = $("<div></div>");
+    experience.attr("class","schoolContainer");
+
+    var experienceTitle = $("<div></div>");
+    experienceTitle.attr("class","schoolSchool");
+    experienceTitle.html(schools[i].school);
+
+    var experienceMinor = $("<div></div>");
+    experienceMinor.attr("class","schoolMinor");
+    experienceMinor.html(schools[i].minor);
+
+    var experienceCompany = $("<div></div>");
+    experienceCompany.attr("class","schoolDegree");
+    experienceCompany.html(schools[i].degree);
+
+    var experiencePhoto = $("<img></img>");
+    experiencePhoto.attr("class","schoolPhoto");
+    experiencePhoto.attr("src",schools[i].img);
+
+    var experienceDate = $("<div></div>");
+    experienceDate.attr("class","schoolDate");
+    experienceDate.html(schools[i].startDate + " - " + schools[i].endDate);
+
+    var experienceDescription = $("<div></div>");
+    experienceDescription.attr("class","schoolActivities");
+
+    for( var x = 0; x < schools[i].activities.length; x++){
+      experienceDescription.append("- "+schools[i].activities[x]+"<br>");
+    }
+
+    var experienceTop = $("<div></div>");
+    experienceTop.attr("class","schoolTop");
+
+    var experienceTopLeft = $("<div></div>");
+    experienceTopLeft.attr("class","schoolTopLeft");
+
+    experienceTopLeft.append(experienceTitle);
+    experienceTopLeft.append(experienceCompany);
+    experienceTopLeft.append(experienceMinor);
+    experienceTopLeft.append(experienceDate);
+
+    experienceTop.append(experienceTopLeft);
+    experienceTop.append(experiencePhoto);
+
+    experience.append(experienceTop);
+    experience.append(experienceDescription);
+
+    educationHolder.append(experience);
+  }
+
+  $("#contentPanelResume").append(educationHolder);
+  $("#contentPanelResume").append(jobHolder);
 }
+
+// <!-- <div id="contentPanelResumeJobs">
+//   <div class="contentPanelResumeJobsContainer">
+//     <div class="contentPanelResumeJobsTitle"></div>
+//     <div class="contentPanelResumeJobsCompany"></div>
+//     <div class="contentPanelResumeJobsPhoto"></div>
+//     <div class="contentPanelResumeJobsDate"></div>
+//     <div class="contentPanelResumeJobsSummary"></div>
+//   </div>
+// </div> -->

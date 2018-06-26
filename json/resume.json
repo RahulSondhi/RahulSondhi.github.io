@@ -32,7 +32,7 @@
   "education":[
     {
       "school":"Stony Brook University",
-      "degree":"Bachelor’s Degree Computer Science",
+      "degree":"B.S Computer Science",
       "minor":"Minor: Business Management",
       "startDate":"2016",
       "endDate":"2020",
@@ -44,8 +44,8 @@
     },
     {
       "school":"Syosset High School",
-      "degree":"Advanced Regents Diploma with Honors",
-      "minor":"",
+      "degree":"Advanced Regents Diploma",
+      "minor":"with Honors",
       "startDate":"2012",
       "endDate":"2016",
       "activities":[
