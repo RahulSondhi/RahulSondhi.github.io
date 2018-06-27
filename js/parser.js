@@ -82,30 +82,15 @@ function fetchProjects() {
 
 }
 
-function getTLLContribution(url,name,user){
-  $.ajax({
-    url: url
-  }).done(function(data) {
-    console.log(name,data)
-    if (data != undefined) {
-      for (var x = 0; x < data.length; x++) {
-        if (data[x].login == user) {
-          console.log(name)
-        }
-      }
-    }
-  });
-}
-
 function setProjects(projects, user, repos) {
 
   var tll = ["bookMaker","Self-Assessment","VRWatsonVive","VQ","Mainhub"];
 
   for (var i = 0; i < repos.length; i++) {
       if(tll.indexOf(repos[i].name) > -1){
-        console.log(repos[i].name)
+        projects.unshift(repos[i])
+        console.log(projects)
       }
-      // getTLLContribution(repos[i].contributors_url,repos[i].name,user.login);
   }
 
   var gitContainer = $("<div></div>");
