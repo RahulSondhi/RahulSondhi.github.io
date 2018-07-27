@@ -1,20 +1,12 @@
 #profileHome {
-  margin-left: 0.25%;
-  margin-top: 2%;
-  width: 35%;
-  height: 60%;
-  border-radius: 1rem;
-  color: white;
-  z-index: 1;
-  background-color: rgba(93, 92, 97, 0.5);
-}
-
-#profileGallery {
-  margin-left: 45%;
-  margin-top: 2%;
-  width: 20%;
-  height: 98%;
-  border-radius: 1rem;
+      margin-left: 18%;
+      margin-top: 15%;
+      width: 45%;
+      height: 60%;
+      border-radius: 1rem;
+      color: white;
+      z-index: 1;
+      background-color: rgba(93, 92, 97, 0.5);
 }
 
 .titleBig {
@@ -64,22 +56,45 @@
   text-align: left;
 }
 
-.socialLogo {
-  height: 20%;
-  width: 50%;
-  margin-left: 25%;
-  margin-right: 25%;
-  margin-top: 5%;
-  padding: 0;
-  opacity: 0.8;
+/* #contentPanelHome{
+  margin-top: 8%;
+} */
+
+#profileRahul{
+  margin-left: 1%;
+  margin-top: 10%;
+  width: 35%;
+  height: 80%;
+  border-radius: 1rem;
+  color: white;
+  z-index: 1;
 }
 
-.socialLogoPic {
+#profileRahulHolder{
   width: 100%;
   height: 100%;
-  cursor: pointer;
+  overflow: hidden;
+  border-radius: 1rem;
+  z-index: 1;
 }
 
-.socialLogoPic:active {
-  transform: translateY(0.250rem);
+#isME{
+  width:100%;
+  z-index: 1;
+}
+
+#profileRahulIcoHolder{
+  height: 25%;
+  width: 30%;
+  margin-top: -125%;
+  margin-left: 5%;
+  border-radius: 100%;
+  overflow: hidden;
+  z-index: 100000;
+}
+
+#isDIGIME{
+  width: 100%;
+  z-index: 100000;
+  background-color: white;
 }

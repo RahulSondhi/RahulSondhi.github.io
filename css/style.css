@@ -10,13 +10,19 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: auto;
   background-color: #000000;
+}
+
+#coverTop,
+#coverLeft,
+#coverRight{
+  background-color: rgba(0,0,0,1);
 }
 
 .screen {
   position: absolute;
-  overflow: hidden;
+  overflow: visible;
   z-index: 1;
 }
 
@@ -30,25 +36,7 @@ body {
   top: 0;
   position: absolute;
   left: 0;
-}
-
-#bg {
-  width: 101%;
-  height: 102%;
-  top: -1%;
-  position: absolute;
-  left: -1%;
-  margin: 0;
-  padding: 0;
-  background-color: #5D5C61;
-}
-
-#bgPic {
-  width: 100%;
-  height: 100%;
-  background-image: url("../media/rahul1.jpg");
-  background-size: contain;
-  background-position: center;
+  z-index: 1000;
 }
 
 #content {
@@ -57,29 +45,33 @@ body {
   top: 8.4%;
   position: absolute;
   left: 0;
+  display: flex;
+  overflow: hidden;
 }
 
 #contentPanel {
   width: 98%;
   left: 1%;
+  margin-right: 1%;
   position: absolute;
   height: 90%;
   top: 3%;
   border-radius: 1rem;
   z-index: 100;
+  overflow: hidden;
 }
 
 #contentPanelHome, #contentPanelResume, #contentPanelProjects, #contentPanelContact, #contentPanelAbout {
   width: 100%;
   height: 100%;
-  margin-bottom: 20%;
+  margin-bottom: 10%;
 }
 
 #contentPanelHome, #contentPanelAbout, #contentPanelContact{
-  display: flex;
+  display: inline-flex;
 }
 
-.pageTransition {
+.pageTransitionOut{
   -webkit-animation: pageTrans 3s;
   /* Safari 4.0 - 8.0 */
   animation: pageTrans 3s;
@@ -87,22 +79,38 @@ body {
 
 @keyframes pageTrans {
   0% {
-    margin-top: 0;
     opacity: 1;
   }
   100% {
-    margin-top: -67.5%;
     opacity: 0;
+  }
+}
+
+.pageTransitionIn{
+  -webkit-animation: pageTransIn 3s;
+  /* Safari 4.0 - 8.0 */
+  animation: pageTransIn 3s;
+}
+
+@keyframes pageTransIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
 #navbar {
   position: absolute;
-  width: 50%;
+  width: 53%;
   height: 100%;
   right: -0.7%;
   top: 0%;
   margin-top: -1%;
+
+  display: inline-flex;
+  flex-direction: row-reverse;
   background-color: rgba(115, 149, 174, 0.4);
   border-style: solid;
   border-bottom-left-radius: 1rem;
@@ -112,45 +120,31 @@ body {
 }
 
 .navbarItem {
-  width: 20%;
-  padding-top: 2.75%;
-  height: 78%;
-  float: right;
-  text-align: center;
+  padding: 5%;
+  width: auto;
+  height: auto;
   color: white;
   font-size: 2rem;
   border-width: 2rem;
+  margin-top: -1%;
+  border-bottom-left-radius: 0.7rem;
+  border-bottom-right-radius: 0.7rem;
 }
 
 .selectedNavbar, .navbarItem:hover, .navbarItem:active {
   background-color: rgba(85, 122, 149, 0.4);
 }
 
-#goingDown {
-  width: 20%;
-  left: 40%;
-  bottom: 0%;
-  height: 8%;
+#terrain{
+  width: 100%;
+  left: 0%;
+  top: 0%;
   position: absolute;
-  display: flex;
-  opacity: 0.7;
+  height: auto;
+  z-index: -1;
 }
 
-.downArrow {
-  height: 90%;
-  margin-left: 2%;
-  margin-right: 2%;
-  width: 13%;
-}
-
-#downArrowText {
-  color: white;
-  font-size: 3rem;
-  width: 70%;
-  height: 90%;
-  text-align: center;
-}
-
-#goingDown:hover, #goingDown:active {
-  opacity: 1;
+.terrain{
+  width: 100%;
+  height: auto;
 }

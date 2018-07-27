@@ -27,7 +27,8 @@ function resizeWindow() {
     else {
         stageWidth = w;
         stageHeight = (9 / 16) * w;
-        stageTop = (h - stageHeight) / 2;
+        // stageTop = (h - stageHeight) / 2;
+        stageTop = 0;
         stageLeft = 0;
         coverTop = stageTop;
         coverBottom = stageTop;

@@ -25,7 +25,29 @@ $(function() {
     }
     e.preventDefault(); // prevent the default action (scroll / move caret)
   });
+
+  setPageBG();
 });
+
+function setPageBG(){
+  setSky();
+
+$('#helpmysoul')[0].addEventListener('load', function() {
+  var svgToAdd = $("#helpmysoul")[0];
+  var gosh = $(svgToAdd).html();
+
+  console.log(gosh);
+}, true);
+
+}
+
+function setSky() {
+  var currentSky = "sky-gradient-"+new Date().getHours();
+  $("#terrain").addClass(currentSky);
+  window.setTimeout(function() {
+      setSky();
+  }, 6000);
+}
 
 function pageConfig() {
     setNavbar();
@@ -37,24 +59,11 @@ function pageConfig() {
 }
 
 function hideAllPages() {
-  //************************************************//
-  $("#contentPanelHome").removeClass("hidden");
-  $("#contentPanelResume").removeClass("hidden");
-  $("#contentPanelAbout").removeClass("hidden");
-  $("#contentPanelProjects").removeClass("hidden");
-  $("#contentPanelContact").removeClass("hidden");
   $("#navbarHome").removeClass("selectedNavbar");
   $("#navbarAbout").removeClass("selectedNavbar");
   $("#navbarResume").removeClass("selectedNavbar");
   $("#navbarProjects").removeClass("selectedNavbar");
   $("#navbarContactMe").removeClass("selectedNavbar");
-  //***********************************************//
-  $("#contentPanelHome").addClass("hidden");
-  $("#contentPanelResume").addClass("hidden");
-  $("#contentPanelAbout").addClass("hidden");
-  $("#contentPanelProjects").addClass("hidden");
-  $("#contentPanelContact").addClass("hidden");
-  //*********************************************//
 }
 
 function setNavbar() {
@@ -84,101 +93,27 @@ function updateUrl() {
 
     case "#contact":
       $("#navbarContactMe").addClass("selectedNavbar");
-      $("#contentPanelContact").removeClass("hidden");
-      //##################Setting Down Section############\\
-      $("#downArrowText").html("Home");
-      $("#goingDown").off();
-      $("#goingDown").click(function() {
-        if (animating == false) {
-          settingHash("home");
-        }
-      });
       break;
 
     case "#projects":
       $("#navbarProjects").addClass("selectedNavbar");
-      $("#contentPanelProjects").removeClass("hidden");
-      //##################Setting Down Section############\\
-      $("#downArrowText").html("Contact");
-      $("#goingDown").off();
-      $("#goingDown").click(function() {
-        if (animating == false) {
-          animating = true;
-          $("#contentPanelContact").removeClass("hidden");
-          $("#contentPanelProjects").addClass("pageTransition");
-          setTimeout(function() {
-            $("#contentPanelProjects").removeClass("pageTransition");
-            settingHash("contact");
-            animating = false;
-          }, time);
-        }
-      });
       break;
 
     case "#resume":
       $("#navbarResume").addClass("selectedNavbar");
-      $("#contentPanelResume").removeClass("hidden");
-      //##################Setting Down Section############\\
-      $("#downArrowText").html("Projects");
-      $("#goingDown").off();
-      $("#goingDown").click(function() {
-        if (animating == false) {
-          animating = true;
-          $("#contentPanelProjects").removeClass("hidden");
-          $("#contentPanelResume").addClass("pageTransition");
-          setTimeout(function() {
-            $("#contentPanelResume").removeClass("pageTransition");
-            settingHash("projects");
-            animating = false;
-          }, time);
-        }
-      });
       break;
 
     case "#about":
       $("#navbarAbout").addClass("selectedNavbar");
-      $("#contentPanelAbout").removeClass("hidden");
-      //##################Setting Down Section############\\
-      $("#downArrowText").html("Resume");
-      $("#goingDown").off();
-      $("#goingDown").click(function() {
-        if (animating == false) {
-          animating = true;
-          $("#contentPanelResume").removeClass("hidden");
-          $("#contentPanelAbout").addClass("pageTransition");
-          setTimeout(function() {
-            $("#contentPanelAbout").removeClass("pageTransition");
-            settingHash("resume");
-            animating = false;
-          }, time);
-        }
-      });
       break;
 
     case "#home":
       $("#navbarHome").addClass("selectedNavbar");
-      $("#contentPanelHome").removeClass("hidden");
-      //##################Setting Down Section############\\
-      $("#downArrowText").html("About Me");
-      $("#goingDown").off();
-      $("#goingDown").click(function() {
-        if (animating == false) {
-          animating = true;
-          $("#contentPanelAbout").removeClass("hidden");
-          $("#contentPanelHome").addClass("pageTransition");
-          setTimeout(function() {
-            $("#contentPanelHome").removeClass("pageTransition");
-            settingHash("about");
-            animating = false;
-          }, time);
-        }
-      });
       break;
   }
 }
 
 function settingHash(section) {
-  console.log("Section: "+section);
   switch (section) {
     case "contact":
       window.location.hash = "contact";

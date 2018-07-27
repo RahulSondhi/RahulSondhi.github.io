@@ -57,7 +57,6 @@ function setContact(contacts) {
     socialLogo.append(socialLogoImg);
     $("#contactLeft").append(socialLogo);
   }
-  $("#profileGallery").append($("#contactLeft").html());
 
 }
 
@@ -89,7 +88,6 @@ function setProjects(projects, user, repos) {
   for (var i = 0; i < repos.length; i++) {
       if(tll.indexOf(repos[i].name) > -1){
         projects.unshift(repos[i])
-        console.log(projects)
       }
   }
 

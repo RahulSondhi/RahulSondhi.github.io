@@ -11,7 +11,7 @@
 }
 
 #aboutMeRight{
-  margin-left: 50%;
+  margin-left: 0.25%;
   margin-top: 2%;
   width: 25%;
   height: 98%;
@@ -61,7 +61,38 @@
   margin-left: 5%;
 }
 
-#aboutMeLeft,
-#aboutMeRight{
-  /* background-color: rgba(255, 255, 255, 0.6); */
+#penguinSpace{
+  margin-left: 0.25%;
+      margin-top: 2%;
+      width: 49%;
+      height: 80%;
+}
+
+#astroPenguin{
+  user-select: none;
+  width: 25%;
+margin-left: 37.5%;
+height: 40%;
+margin-top: 25%;
+
+-webkit-animation: axisY 60s;
+/* Safari 4.0 - 8.0 */
+animation: axisY 60s;
+animation-iteration-count: infinite;
+animation-delay: 0s;
+}
+
+@keyframes axisY {
+    25% {
+        transform: translate(-10rem, -10rem) rotate(380deg);
+    }
+    50% {
+        transform: translate(10rem, -10rem) rotate(-20deg);
+    }
+    75% {
+        transform: translate(10rem, 10rem) rotate(-400deg);
+    }
+    100% {
+        transform: translate(-10rem, 10rem) rotate(20deg);
+    }
 }
