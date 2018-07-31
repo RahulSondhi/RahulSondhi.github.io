@@ -114,21 +114,28 @@ function updateUrl() {
 }
 
 function settingHash(section) {
+  var offset = 0;
   switch (section) {
     case "contact":
       window.location.hash = "contact";
+      offset = $("#contentPanelContact").offset().top;
       break;
     case "projects":
       window.location.hash = "projects";
+      offset = $("#contentPanelProjects").offset().top;
       break;
     case "resume":
       window.location.hash = "resume";
+      offset = $("#contentPanelResume").offset().top;
       break;
     case "about":
       window.location.hash = "about";
+      offset = $("#contentPanelAbout").offset().top;
       break;
     case "home":
       window.location.hash = "home";
+      offset = $("#contentPanelHome").offset().top;
       break;
   }
+      window.scrollTo(0,offset)
 }

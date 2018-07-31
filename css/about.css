@@ -83,6 +83,9 @@ animation-delay: 0s;
 }
 
 @keyframes axisY {
+    0% {
+      transform: translate(-10rem, 10rem) rotate(20deg);
+    }
     25% {
         transform: translate(-10rem, -10rem) rotate(380deg);
     }
