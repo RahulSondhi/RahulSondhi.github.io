@@ -17,14 +17,14 @@ function startDePretty(){
 function startDeHeart(){
   heartyBois = document.getElementById("layer13").childNodes;
   heartyBois.forEach(function(e){
-    makeEmShine(e,0.75);
+    makeEmShine(e,0.85);
   })
 }
 
 function startDeSmoke(){
   smokeyBois = document.getElementById("layer12").childNodes;
   smokeyBois.forEach(function(e){
-    makeEmShine(e,0.75);
+    makeEmShine(e,0.85);
   })
 }
 
@@ -38,9 +38,9 @@ function startDeShine(){
 function makeEmShine(e,multi){
   if(e.tagName == "path"){
     var time = 200+getRandomInt(1000);
-    e.setAttribute("opacity",Math.random()*multi);
+    e.setAttribute("opacity",0.1+Math.random()*multi);
     setTimeout(function(){
-      e.setAttribute("opacity",Math.random()*multi);
+      e.setAttribute("opacity",0.1+Math.random()*multi);
       makeEmShine(e,multi);
     }, time);
   }

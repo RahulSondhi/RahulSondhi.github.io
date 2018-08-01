@@ -24,6 +24,8 @@ body {
   position: absolute;
   overflow: visible;
   z-index: 1;
+  padding: 0;
+  margin: 0;
 }
 
 .hidden {
@@ -109,29 +111,30 @@ body {
 
   display: inline-flex;
   flex-direction: row-reverse;
-  background-color: rgba(115, 149, 174, 0.4);
-  border-style: solid;
+  /* background-color: rgba(115, 149, 174, 0.4); */
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../media/metal.svg);
+
+  /* border-style: solid;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   border-width: 0.5rem;
-  border-color: rgba(93, 92, 97, 0.4);
+  border-color: rgba(93, 92, 97, 0.4); */
 }
 
 .navbarItem {
   padding: 5%;
-  padding-bottom: 3.5%;
+  padding-bottom: 4%;
   width: auto;
   height: auto;
   color: white;
   font-size: 2rem;
-  border-width: 2rem;
-  margin-top: -1%;
-  border-bottom-left-radius: 0.7rem;
-  border-bottom-right-radius: 0.7rem;
 }
 
 .selectedNavbar, .navbarItem:hover, .navbarItem:active {
-  background-color: rgba(85, 122, 149, 0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 #terrain{
@@ -141,6 +144,8 @@ body {
   position: absolute;
   height: auto;
   z-index: -1;
+  padding: 0;
+  background-position: center;
 }
 
 .terrain{

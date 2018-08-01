@@ -61,10 +61,10 @@
 } */
 
 #profileRahul{
-  margin-left: 1%;
-  margin-top: 10%;
-  width: 35%;
-  height: 80%;
+  margin-left: 3%;
+  margin-top: 15%;
+  width: 31%;
+  height: 70%;
   border-radius: 1rem;
   color: white;
   z-index: 1;
@@ -86,7 +86,7 @@
 #profileRahulIcoHolder{
   height: 25%;
   width: 30%;
-  margin-top: -125%;
+  margin-top: -120%;
   margin-left: 5%;
   border-radius: 100%;
   overflow: hidden;
