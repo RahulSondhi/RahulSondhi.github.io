@@ -1,14 +1,17 @@
 var animating = false;
 var userScroll = false;
 var currentState = "";
+var lastclick = 0;
+
 $(function() {
 
-  $(window).on("unload", function(e) {
-    updateUrl();
-  });
-
-  $(window).on('hashchange', function() {
-      updateUrl();
+  $("#stage").on("click",function(){
+    if(lastclick+15 < Math.floor(Date.now() / 1000)){
+      lastclick = Math.floor(Date.now() / 1000);
+      console.log("\n");
+      console.log("Seems the lights are a bit weird...");
+      $('#helpmysoul').html('<object type="image/svg+xml" data="media/landscape.svg" id="helpmysoul" class="terrain"></object>');
+    }
   });
 
   $(document).keydown(function(e) {
@@ -30,12 +33,11 @@ $(function() {
   $(window).on("scroll",function(e){
     scrollDivSet($(window).scrollTop());
   })
-
-  setPageBG();
 });
 
 function setPageBG(){
   setSky();
+  $('#terrain').html('<object type="image/svg+xml" data="media/landscape.svg" id="helpmysoul" class="terrain"></object>');
 }
 
 function setSky() {
@@ -47,6 +49,7 @@ function setSky() {
 }
 
 function pageConfig() {
+    console.log("\n");
     console.log("Hey We All Loaded Up Now! Have Fun!");
     setNavbar();
     if (window.location.hash == "" || window.location.hash == "#") {
@@ -54,6 +57,15 @@ function pageConfig() {
     } else {
       updateUrl();
     }
+    setPageBG();
+
+    $(window).on("unload", function(e) {
+        updateUrl();
+    });
+
+    $(window).on('hashchange', function() {
+        updateUrl();
+    });
 }
 
 function hideAllPages() {
@@ -123,22 +135,27 @@ function settingHash(section) {
     switch (section) {
       case "contact":
         window.location.hash = "contact";
+        console.log("\n");
         console.log("Here's how you can contact me! Hit me up anytime!");
       break;
       case "projects":
         window.location.hash = "projects";
+        console.log("\n");
         console.log("These are all my projects, I've both worked on and or contributed hugely too. Have fun there are links and descriptions!");
       break;
       case "resume":
         window.location.hash = "resume";
+        console.log("\n");
         console.log("This is my experiences working so far! As I continue on with life, I'll update it!");
       break;
       case "about":
         window.location.hash = "about";
+        console.log("\n");
         console.log("Here we are with the about section. This is where I answer questions, I've been asked a million times. -_- Please dont ask me them again!");
       break;
       case "home":
         window.location.hash = "home";
+        console.log("\n");
         console.log("So this is the splash page with a little TLDR of me!");
       break;
     }
@@ -170,14 +187,26 @@ function settingScroll(section) {
 
 function scrollDivSet(scroll){
   userScroll = true;
-  console.log(scroll,$(window).height()/2 - $(window).scrollTop())
-  if(scroll > $("#contentPanelProjects").offset().top){
-    settingHash("projects");
-  }else if(scroll > $("#contentPanelResume").offset().top){
-    settingHash("resume");
-  }else if(scroll > $("#contentPanelAbout").offset().top){
-    settingHash("about");
-  }else if(scroll > 0){
+  scroll += 100;
+  // console.log(scroll,$(window).scrollTop())
+
+  if(scroll < $("#contentPanelAbout").offset().top){
     settingHash("home");
+
+  }else if(scroll < $("#contentPanelResume").offset().top){
+    // console.log("About:",$("#contentPanelAbout").offset().top)
+    settingHash("about");
+
+  }else if(scroll < $("#contentPanelProjects").offset().top){
+    // console.log("Resume:",$("#contentPanelResume").offset().top)
+    settingHash("resume");
+
+  }else if(scroll < $("#contentPanelContact").offset().top){
+    // console.log("Projects:",$("#contentPanelProjects").offset().top)
+    settingHash("projects");
+
+  }else{
+    // console.log("Contact:",$("#contentPanelContact").offset().top)
+    settingHash("contact");
   }
 }

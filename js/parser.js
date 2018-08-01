@@ -4,6 +4,7 @@ $(function() {
 
 function setPage() {
   console.log("Welcome to my console!");
+  console.log("\n");
   console.log("Loading jsons:");
   fetchContact();
 }

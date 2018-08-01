@@ -145,7 +145,8 @@
 
 #workPenguin{
   user-select: none;
-  width: 100%;
+  width: 80%;
+  margin-left: 10%;
 
 -webkit-animation: axisY2 20s;
 /* Safari 4.0 - 8.0 */

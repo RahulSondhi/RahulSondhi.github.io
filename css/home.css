@@ -11,11 +11,11 @@
 
 .titleBig {
   font-size: 5.5rem;
-  padding: 5%;
-  padding-bottom:1%;
-  width: 90%;
-  height: 23%;
-  text-align: center;
+      padding: 5%;
+      padding-bottom: 0;
+      width: 90%;
+      height: 23%;
+      text-align: center;
 }
 
 #profileHome hr {
@@ -27,33 +27,33 @@
 }
 
 .titleSub {
-  font-size: 3.5rem;
-  margin-left: 5%;
-  margin-right: 5%;
-  width: 90%;
-  height: 10%;
-  text-align: center;
+  font-size: 5rem;
+      margin-top: 4%;
+      margin-left: 5%;
+      margin-right: 5%;
+      width: 90%;
+      height: 15%;
+      text-align: center;
 }
 
 .titleSub2 {
-  margin-top: 5%;
-  font-size: 3.5rem;
-  margin-left: 5%;
-  margin-right: 5%;
-  width: 90%;
-  height: 10%;
-  text-align: center;
+  margin-top: 6%;
+      font-size: 3.5rem;
+      margin-left: 5%;
+      margin-right: 5%;
+      width: 90%;
+      height: 10%;
+      text-align: center;
 }
 
 .titleSub3 {
-  margin-top: 3%;
-  font-size: 2.5rem;
-  margin-left: 5%;
-  margin-right: 5%;
-  padding-left: 5%;
-  width: 90%;
-  height: 6%;
-  text-align: left;
+  margin-top: 2%;
+      font-size: 3rem;
+      margin-left: 5%;
+      margin-right: 5%;
+      width: 90%;
+      height: 10%;
+      text-align: center;
 }
 
 /* #contentPanelHome{
