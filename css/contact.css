@@ -96,3 +96,42 @@
 .socialLogoPic:active {
   transform: translateY(0.250rem);
 }
+
+#penguinPara{
+  margin-left: 30.25%;
+  margin-top: 2%;
+  width: 40%;
+  height: 98%;
+  position: absolute;
+}
+
+#paraPenguin{
+  user-select: none;
+  width: 60%;
+  margin-left: 20%;
+
+-webkit-animation: axisY3 20s;
+/* Safari 4.0 - 8.0 */
+animation: axisY3 20s;
+animation-iteration-count: infinite;
+animation-delay: 0s;
+animation-timing-function:ease-in;
+}
+
+@keyframes axisY3 {
+    0% {
+      transform: translate(0, -1rem)rotate(20deg);
+    }
+    25% {
+        transform: translate(0, 1rem) rotate(0deg);
+    }
+    50% {
+        transform: translate(0, 0.5rem) rotate(-20deg);
+    }
+    75% {
+        transform: translate(0, 1.5rem) rotate(0deg);
+    }
+    100% {
+        transform: translate(0, -1rem) rotate(20deg);
+    }
+}
