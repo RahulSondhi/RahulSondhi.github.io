@@ -1,21 +1,6 @@
 {
   "jobs": [
     {
-      "title":"Full Stack Developer",
-      "company":"Stony Brook University",
-      "startDate":"May 2017",
-      "endDate":"Present",
-      "description":[
-        "Made interactive educational tools for improving learning experience in the classroom",
-        "Created an interactive e-textbook for topics like Physical Therapy and ECG Interpretation",
-        "Upgraded a video quizzing software that is used for both teaching and faculty training",
-        "Made a game using Watson APIs to let kids spawn and play with a character in VR",
-        "Created a self-assessment program that assess students writing skills in their courses",
-        "Languages used were HTML, CSS, JavaScript, jQuery, PHP, Node, C# and Aframe"
-      ],
-      "img":"media/work.svg"
-    },
-    {
       "title":"Mentor",
       "company":"kidOYO",
       "startDate":"Feb 2018",
@@ -25,6 +10,21 @@
         "Created challenges and lessons to teach students web development skills",
         "Taught how to use APIs/Libraries like: JQuery, CardoDB, Firebase, Google Maps, and etc",
         "Worked with languages like: Java, Python, HTML/CSS/JS, PHP"
+      ],
+      "img":"media/work.svg"
+    },
+    {
+      "title":"Full Stack Developer",
+      "company":"Stony Brook University",
+      "startDate":"May 2017",
+      "endDate":"Aug 2018",
+      "description":[
+        "Made interactive educational tools for improving learning experience in the classroom",
+        "Created an interactive e-textbook for topics like Physical Therapy and ECG Interpretation",
+        "Upgraded a video quizzing software that is used for both teaching and faculty training",
+        "Made a game using Watson APIs to let kids spawn and play with a character in VR",
+        "Created a self-assessment program that assess students writing skills in their courses",
+        "Languages used were HTML, CSS, JavaScript, jQuery, PHP, Node, C# and Aframe"
       ],
       "img":"media/work.svg"
     }
@@ -39,21 +39,6 @@
       "activities":[
         "Stony Brook Computing Society (Vice President 2018-2019 , Secretary 2017 - 2018)",
         "DoIT Student Advisory Board (Student Board Member 2017-2018)"
-      ],
-      "img":"media/school.svg"
-    },
-    {
-      "school":"Syosset High School",
-      "degree":"Advanced Regents Diploma",
-      "minor":"with Honors",
-      "startDate":"2012",
-      "endDate":"2016",
-      "activities":[
-        "Robotics Team (Team Lead 2013-2016)",
-        "Robotics Club (President 2013-2016)",
-        "Technology Club (Active Member)",
-        "Web Design Club (Active Member)",
-        "National Honor Society"
       ],
       "img":"media/school.svg"
     }

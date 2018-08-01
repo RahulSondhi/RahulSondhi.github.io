@@ -1,5 +1,6 @@
 var animating = false;
-
+var userScroll = false;
+var currentState = "";
 $(function() {
 
   $(window).on("unload", function(e) {
@@ -7,7 +8,7 @@ $(function() {
   });
 
   $(window).on('hashchange', function() {
-    updateUrl();
+      updateUrl();
   });
 
   $(document).keydown(function(e) {
@@ -26,19 +27,15 @@ $(function() {
     e.preventDefault(); // prevent the default action (scroll / move caret)
   });
 
+  $(window).on("scroll",function(e){
+    scrollDivSet($(window).scrollTop());
+  })
+
   setPageBG();
 });
 
 function setPageBG(){
   setSky();
-
-$('#helpmysoul')[0].addEventListener('load', function() {
-  var svgToAdd = $("#helpmysoul")[0];
-  var gosh = $(svgToAdd).html();
-
-  console.log(gosh);
-}, true);
-
 }
 
 function setSky() {
@@ -50,6 +47,7 @@ function setSky() {
 }
 
 function pageConfig() {
+    console.log("Hey We All Loaded Up Now! Have Fun!");
     setNavbar();
     if (window.location.hash == "" || window.location.hash == "#") {
       window.location.hash = "home";
@@ -89,53 +87,97 @@ function updateUrl() {
   var parse = hash.split("-");
   var time = 3000;
   hideAllPages();
-  switch (parse[0]) {
+  var section = parse[0].substring(1);
+  switch (section) {
 
-    case "#contact":
+    case "contact":
       $("#navbarContactMe").addClass("selectedNavbar");
       break;
 
-    case "#projects":
+    case "projects":
       $("#navbarProjects").addClass("selectedNavbar");
       break;
 
-    case "#resume":
+    case "resume":
       $("#navbarResume").addClass("selectedNavbar");
       break;
 
-    case "#about":
+    case "about":
       $("#navbarAbout").addClass("selectedNavbar");
       break;
 
-    case "#home":
+    case "home":
       $("#navbarHome").addClass("selectedNavbar");
       break;
+  }
+
+  if(userScroll){
+    userScroll = false;
+  }else{
+    settingScroll(section);
   }
 }
 
 function settingHash(section) {
+  if(currentState != section){
+    switch (section) {
+      case "contact":
+        window.location.hash = "contact";
+        console.log("Here's how you can contact me! Hit me up anytime!");
+      break;
+      case "projects":
+        window.location.hash = "projects";
+        console.log("These are all my projects, I've both worked on and or contributed hugely too. Have fun there are links and descriptions!");
+      break;
+      case "resume":
+        window.location.hash = "resume";
+        console.log("This is my experiences working so far! As I continue on with life, I'll update it!");
+      break;
+      case "about":
+        window.location.hash = "about";
+        console.log("Here we are with the about section. This is where I answer questions, I've been asked a million times. -_- Please dont ask me them again!");
+      break;
+      case "home":
+        window.location.hash = "home";
+        console.log("So this is the splash page with a little TLDR of me!");
+      break;
+    }
+    currentState = section;
+  }
+}
+
+function settingScroll(section) {
   var offset = 0;
   switch (section) {
     case "contact":
-      window.location.hash = "contact";
       offset = $("#contentPanelContact").offset().top;
       break;
     case "projects":
-      window.location.hash = "projects";
       offset = $("#contentPanelProjects").offset().top;
       break;
     case "resume":
-      window.location.hash = "resume";
       offset = $("#contentPanelResume").offset().top;
       break;
     case "about":
-      window.location.hash = "about";
       offset = $("#contentPanelAbout").offset().top;
       break;
     case "home":
-      window.location.hash = "home";
       offset = $("#contentPanelHome").offset().top;
       break;
   }
       window.scrollTo(0,offset)
+}
+
+function scrollDivSet(scroll){
+  userScroll = true;
+  console.log(scroll,$(window).height()/2 - $(window).scrollTop())
+  if(scroll > $("#contentPanelProjects").offset().top){
+    settingHash("projects");
+  }else if(scroll > $("#contentPanelResume").offset().top){
+    settingHash("resume");
+  }else if(scroll > $("#contentPanelAbout").offset().top){
+    settingHash("about");
+  }else if(scroll > 0){
+    settingHash("home");
+  }
 }

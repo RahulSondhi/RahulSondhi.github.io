@@ -134,3 +134,41 @@
   margin-top: 3%;
   font-size: 1.4rem;
 }
+
+#penguinWork{
+  margin-left: 2.5%;
+  margin-top: 30%;
+  width: 30%;
+  height: 40%;
+  position: absolute;
+}
+
+#workPenguin{
+  user-select: none;
+  width: 100%;
+
+-webkit-animation: axisY2 20s;
+/* Safari 4.0 - 8.0 */
+animation: axisY2 20s;
+animation-iteration-count: infinite;
+animation-delay: 0s;
+animation-timing-function:ease-in;
+}
+
+@keyframes axisY2 {
+    0% {
+      transform: translate(0, -1rem)rotate(20deg);
+    }
+    25% {
+        transform: translate(0, 1rem) rotate(-10deg);
+    }
+    50% {
+        transform: translate(0, 0.5rem) rotate(-35deg);
+    }
+    75% {
+        transform: translate(0, 1.5rem) rotate(5deg);
+    }
+    100% {
+        transform: translate(0, -1rem) rotate(20deg);
+    }
+}
