@@ -113,15 +113,9 @@ body {
   flex-direction: row-reverse;
   /* background-color: rgba(115, 149, 174, 0.4); */
 
-  background-repeat: no-repeat;
-  background-size: contain;
+  background-repeat:round;
+  background-size: cover;
   background-image: url(../media/metal.svg);
-
-  /* border-style: solid;
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-  border-width: 0.5rem;
-  border-color: rgba(93, 92, 97, 0.4); */
 }
 
 .navbarItem {
