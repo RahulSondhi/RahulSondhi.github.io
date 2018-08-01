@@ -1,28 +1,28 @@
 {
   "questions": [
     {
-      "questionText":"What is my Major?",
-      "questionAnswer":"Computer Science B.S & <br> Minor in Business"
-    },
-    {
-      "questionText":"Where Am I Studying?",
-      "questionAnswer":"Stony Brook University <br> New York"
-    },
-    {
-      "questionText":"When Am I Graduating?",
-      "questionAnswer":"May 2020"
-    },
-    {
-      "questionText":"What are my Interests?",
-      "questionAnswer":"Computer Security, Business Management, Game Development"
-    },
-    {
-      "questionText":"What Are My Hobbies?",
-      "questionAnswer":"Mentoring, Robotics, Stock Trading, Mountain Biking, Photography, Video Games"
+      "questionText":"Education Background?",
+      "questionAnswer":"Computer Science B.S & <br> Minor in Business <br> Stony Brook University <br> Class 2020"
     },
     {
       "questionText":"Programming Languages?",
       "questionAnswer":"HTML, CSS, JS, Java, Python, PHP, SQL, Bash"
+    },
+    {
+      "questionText":"5 Years From Now?",
+      "questionAnswer":"Follow down path of Entrepreneurship"
+    },
+    {
+      "questionText":"Why Penguins?",
+      "questionAnswer":"I took a spirit animal test in high school and got a penguin. It stuck after that and also they are really cute!"
+    },
+    {
+      "questionText":"Favorite Quote?",
+      "questionAnswer":"No one ever made a difference by being like everyone else. <br> -P.T. Barnum"
+    },
+    {
+      "questionText":"What Are My Hobbies?",
+      "questionAnswer":" - Programming <br> - Robotics <br> - Photography <br> - Video Games"
     }
   ]
 }
