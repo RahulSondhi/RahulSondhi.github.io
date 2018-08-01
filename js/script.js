@@ -1,4 +1,4 @@
-var animating = false;
+var compScroll = false;
 var userScroll = false;
 var currentState = "";
 var lastclick = 0;
@@ -30,9 +30,21 @@ $(function() {
     e.preventDefault(); // prevent the default action (scroll / move caret)
   });
 
+  $(window).on("unload", function(e) {
+      updateUrl();
+  });
+
+  $(window).on('hashchange', function() {
+      updateUrl();
+  });
+
   $(window).on("scroll",function(e){
-    scrollDivSet($(window).scrollTop());
-  })
+    if(!compScroll){
+      scrollDivSet($(window).scrollTop());
+    }else{
+      compScroll = false
+    }
+  });
 });
 
 function setPageBG(){
@@ -58,14 +70,6 @@ function pageConfig() {
       updateUrl();
     }
     setPageBG();
-
-    $(window).on("unload", function(e) {
-        updateUrl();
-    });
-
-    $(window).on('hashchange', function() {
-        updateUrl();
-    });
 }
 
 function hideAllPages() {
@@ -182,29 +186,30 @@ function settingScroll(section) {
       offset = $("#contentPanelHome").offset().top;
       break;
   }
-      window.scrollTo(0,offset)
+
+      compScroll = true;
+      window.scrollTo(0,offset-100);
 }
 
 function scrollDivSet(scroll){
   userScroll = true;
-  scroll += 100;
+  scroll += 250;
   // console.log(scroll,$(window).scrollTop())
 
-  if(scroll < $("#contentPanelAbout").offset().top){
+  if(scroll <= $("#contentPanelAbout").offset().top){
     settingHash("home");
 
-  }else if(scroll < $("#contentPanelResume").offset().top){
+  }else if(scroll <= $("#contentPanelResume").offset().top){
     // console.log("About:",$("#contentPanelAbout").offset().top)
     settingHash("about");
 
-  }else if(scroll < $("#contentPanelProjects").offset().top){
+  }else if(scroll <= $("#contentPanelProjects").offset().top){
     // console.log("Resume:",$("#contentPanelResume").offset().top)
     settingHash("resume");
 
-  }else if(scroll < $("#contentPanelContact").offset().top){
+  }else if(scroll <= $("#contentPanelContact").offset().top- $("#contentPanelContact").height()*0.825){
     // console.log("Projects:",$("#contentPanelProjects").offset().top)
     settingHash("projects");
-
   }else{
     // console.log("Contact:",$("#contentPanelContact").offset().top)
     settingHash("contact");

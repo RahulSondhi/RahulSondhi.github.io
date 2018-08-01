@@ -30,15 +30,6 @@ body {
   display: none !important;
 }
 
-#header {
-  height: 8%;
-  width: 100%;
-  top: 0;
-  position: absolute;
-  left: 0;
-  z-index: 1000;
-}
-
 #content {
   height: 92%;
   width: 100%;
@@ -101,12 +92,19 @@ body {
   }
 }
 
+#header {
+  height: auto;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  left: 0;
+  z-index: 1000;
+}
+
 #navbar {
-  position: absolute;
   width: 53%;
   height: 100%;
-  right: -0.7%;
-  top: 0%;
+  margin-left: 48%;
   margin-top: -1%;
 
   display: inline-flex;
@@ -121,6 +119,7 @@ body {
 
 .navbarItem {
   padding: 5%;
+  padding-bottom: 3.5%;
   width: auto;
   height: auto;
   color: white;
