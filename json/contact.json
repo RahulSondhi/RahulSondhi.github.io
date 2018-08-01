@@ -2,15 +2,15 @@
   "sites": [
     {
       "link":"http://sbcs.io/",
-      "title":"SBCS Site (Vice President)"
+      "title":"SBCS Site (VP/Secretary)"
     },
     {
-      "link":"https://apps.tlt.stonybrook.edu",
+      "link":"http://sbuhacks.org/",
+      "title":"SBUHacks (Founder/Head Orgnanizer)"
+    },
+    {
+      "link":"http://kidoyo.com/",
       "title":"Current Workplace Site"
-    },
-    {
-      "link":"https://github.com/SBUtltmedia",
-      "title":"Current Workplace Repo"
     }
   ],
   "socialMedia":[
@@ -33,7 +33,6 @@
     }
   ],
   "emails":[
-    "rahul.sondhi@hotmail.com",
-    "rahul.sondhi@stonybrook.edu"
+    "rahul.sondhi@hotmail.com"
   ]
 }
