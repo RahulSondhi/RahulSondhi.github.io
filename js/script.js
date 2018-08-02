@@ -5,8 +5,8 @@ var lastclick = 0;
 
 $(function() {
 
-  $("#stage").on("click",function(){
-    if(lastclick+15 < Math.floor(Date.now() / 1000)){
+  $("#stage").on("click", function() {
+    if (lastclick + 15 < Math.floor(Date.now() / 1000)) {
       lastclick = Math.floor(Date.now() / 1000);
       console.log("\n");
       console.log("Seems the lights are a bit weird...");
@@ -31,45 +31,46 @@ $(function() {
   });
 
   $(window).on("unload", function(e) {
-      updateUrl();
+    updateUrl();
   });
 
   $(window).on('hashchange', function() {
-      updateUrl();
+    updateUrl();
   });
 
-  $(window).on("scroll",function(e){
-    if(!compScroll){
+  $(window).on("scroll", function(e) {
+    if (!compScroll) {
       scrollDivSet($(window).scrollTop());
-    }else{
+    } else {
       compScroll = false
     }
   });
 });
 
-function setPageBG(){
+function setPageBG() {
   setSky();
   $('#terrain').html('<object type="image/svg+xml" data="media/landscape.svg" id="helpmysoul" class="terrain"></object>');
 }
 
 function setSky() {
-  var currentSky = "sky-gradient-"+new Date().getHours();
+  var currentSky = "sky-gradient-" + new Date().getHours();
   $("#terrain").addClass(currentSky);
   window.setTimeout(function() {
-      setSky();
+    setSky();
   }, 6000);
 }
 
 function pageConfig() {
-    console.log("\n");
-    console.log("Hey We All Loaded Up Now! Have Fun!");
-    setNavbar();
-    if (window.location.hash == "" || window.location.hash == "#") {
-      window.location.hash = "home";
-    } else {
-      updateUrl();
-    }
-    setPageBG();
+  console.log("\n");
+  console.log("Hey We All Loaded Up Now! Have Fun!");
+  setNavbar();
+  setTyped();
+  if (window.location.hash == "" || window.location.hash == "#") {
+    window.location.hash = "home";
+  } else {
+    updateUrl();
+  }
+  setPageBG();
 }
 
 function hideAllPages() {
@@ -127,41 +128,41 @@ function updateUrl() {
       break;
   }
 
-  if(userScroll){
+  if (userScroll) {
     userScroll = false;
-  }else{
+  } else {
     settingScroll(section);
   }
 }
 
 function settingHash(section) {
-  if(currentState != section){
+  if (currentState != section) {
     switch (section) {
       case "contact":
         window.location.hash = "contact";
         console.log("\n");
         console.log("Here's how you can contact me! Hit me up anytime!");
-      break;
+        break;
       case "projects":
         window.location.hash = "projects";
         console.log("\n");
         console.log("These are all my projects, I've both worked on and or contributed hugely too. Have fun there are links and descriptions!");
-      break;
+        break;
       case "resume":
         window.location.hash = "resume";
         console.log("\n");
         console.log("This is my experiences working so far! As I continue on with life, I'll update it!");
-      break;
+        break;
       case "about":
         window.location.hash = "about";
         console.log("\n");
         console.log("Here we are with the about section. This is where I answer questions, I've been asked a million times. -_- Please dont ask me them again!");
-      break;
+        break;
       case "home":
         window.location.hash = "home";
         console.log("\n");
         console.log("So this is the splash page with a little TLDR of me!");
-      break;
+        break;
     }
     currentState = section;
   }
@@ -187,31 +188,46 @@ function settingScroll(section) {
       break;
   }
 
-      compScroll = true;
-      window.scrollTo(0,offset-100);
+  compScroll = true;
+  window.scrollTo(0, offset - 100);
 }
 
-function scrollDivSet(scroll){
+function scrollDivSet(scroll) {
   userScroll = true;
   scroll += 250;
   // console.log(scroll,$(window).scrollTop())
 
-  if(scroll <= $("#contentPanelAbout").offset().top){
+  if (scroll <= $("#contentPanelAbout").offset().top) {
     settingHash("home");
 
-  }else if(scroll <= $("#contentPanelResume").offset().top){
+  } else if (scroll <= $("#contentPanelResume").offset().top) {
     // console.log("About:",$("#contentPanelAbout").offset().top)
     settingHash("about");
 
-  }else if(scroll <= $("#contentPanelProjects").offset().top){
+  } else if (scroll <= $("#contentPanelProjects").offset().top) {
     // console.log("Resume:",$("#contentPanelResume").offset().top)
     settingHash("resume");
 
-  }else if(scroll <= $("#contentPanelContact").offset().top- $("#contentPanelContact").height()*0.825){
+  } else if (scroll <= $("#contentPanelContact").offset().top - $("#contentPanelContact").height() * 0.825) {
     // console.log("Projects:",$("#contentPanelProjects").offset().top)
     settingHash("projects");
-  }else{
+  } else {
     // console.log("Contact:",$("#contentPanelContact").offset().top)
     settingHash("contact");
   }
+}
+
+function setTyped(){
+
+  var type = new Typed("#typed",{
+    // Change to edit type effect
+    strings: ["Full Stack Developer", "Selfie Master", "kidOYO Mentor","Living Meme","SBUHacks Co-Founder", "Hooligan", "SBCS Vice President", "24/7 Enthusiasm", "Undergrad Student", "Penguin Lover","Entrepreneur"],
+    typeSpeed: 90,
+    backDelay: 1500,
+    loop: !0,
+    resetCallback: function() {
+      setTyped()
+    }
+  });
+
 }

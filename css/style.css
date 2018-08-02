@@ -134,12 +134,13 @@ body {
 #terrain{
   width: 100%;
   left: 0%;
-  top: 0%;
+  top: -1%;
   position: absolute;
   height: auto;
   z-index: -1;
   padding: 0;
-  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 99.8%;
 }
 
 .terrain{
