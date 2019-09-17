@@ -1,98 +1,167 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>Project Hooligan</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/sky.css">
-  <link rel="stylesheet" href="css/home.css">
-  <link rel="stylesheet" href="css/about.css">
-  <link rel="stylesheet" href="css/contact.css">
-  <link rel="stylesheet" href="css/project.css">
-  <link rel="stylesheet" href="css/resume.css">
+  <title>Project Huligan</title>
+
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/foundation.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/sky.css">
 </head>
 
-<body>
-  <div id="stage" class="screen">
+<body class="sky">
 
-    <div id="header">
-      <div id="navbar">
-        <div id="navbarContactMe" class="navbarItem">Contact</div>
-        <div id="navbarProjects" class="navbarItem">Projects</div>
-        <div id="navbarResume" class="navbarItem">Resume</div>
-        <div id="navbarAbout" class="navbarItem">About</div>
-        <div id="navbarHome" class="navbarItem">Home</div>
-      </div>
+  <div id="background-wrap">
+    <div class="x1">
+        <div class="cloud"></div>
     </div>
 
+    <div class="x2">
+        <div class="cloud"></div>
+    </div>
 
-        <div id="contentPanelHome">
-          <div id="profileRahul">
-            <div id="profileRahulHolder">
-              <img src="media/rahul.jpg" id="isME">
-            </div>
-            <div id="profileRahulIcoHolder">
-              <img src="media/digiHul.png" id="isDIGIME">
-            </div>
-          </div>
+    <div class="x3">
+        <div class="cloud"></div>
+    </div>
 
-          <div id="profileHome">
-            <div class="titleBig">Rahul Sondhi</div>
-            <hr>
-            <div class="titleSub"><span id="typed"></span></div>
-            <div class="titleSub2">B.S: Computer Science</div>
-            <div class="titleSub3">Minor: Business Management</div>
-            <div class="titleSub3">rahul.sondhi@stonybrook.edu</div>
-          </div>
+    <div class="x4">
+        <div class="penguinParachute"></div>
+    </div>
+
+    <div class="x5">
+        <div class="cloud"></div>
+    </div>
+
+</div>
+
+  <div class="noHeight" data-sticky-container>
+    <div class="small-12 sticky" data-sticky-on="small" data-sticky data-options="marginTop: 0">
+      <div class="navbar title-bar" data-responsive-toggle="menu" data-hide-for="medium">
+        <button id="menuButton" class="menu-icon" type="button" data-toggle="menu"></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="noHeight" data-sticky-container>
+    <div class="small-12 sticky" data-sticky data-options="marginTop: 0">
+      <div class="top-bar" id="menu">
+        <div id="quickMenu" class="top-bar-right">
+          <ul class="menu menu-hover-lines vertical medium-horizontal" data-dropdown-menu>
+            <li id="splashMenu" class="active"><a href="#home">Home</a></li>
+            <li id="introMenu"><a href="#bio">Bio</a></li>
+            <li id="educationMenu"><a href="#edu">Education</a></li>
+            <li id="resumeMenu"><a href="#jobs">Jobs</a></li>
+            <li id="projectsMenu"><a href="#proj">Projects</a></li>
+            <li id="contactMenu"><a href="#con">Contact Me</a></li>
+          </ul>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <div id="contentPanelAbout">
-          <div id="aboutMeLeft"></div>
-          <div id="penguinSpace">
-            <img src="media/penguinAtro.svg" id="astroPenguin">
-          </div>
-          <div id="aboutMeRight"></div>
-        </div>
+  <div class="grid-container">
+    <div id="splash" class="grid-x grid-padding-x align-middle grid-margin-y">
 
-        <div id="contentPanelResume">
-          <div id="penguinWork">
-            <img src="media/penguinWork.svg" id="workPenguin">
-          </div>
-        </div>
+      <div id="welcomeText" class="align-self-middle medium-12 large-12 cell center seperatortitle">
+        <h1>Welcome to Project Huligan</h1>
+      </div>
 
-        <div id="contentPanelProjects">
-        </div>
+      <div class="medium-4 large-4 cell">
+        <img id="profilePic" src="media/rahul.jpg">
+      </div>
 
-        <div id="contentPanelContact">
-          <div id="contactLeft"></div>
-          <div id="penguinPara">
-            <img src="media/penguinParachute.svg" id="paraPenguin">
-          </div>
-          <div id="contactRight">
-            <div class="titleContact">Contact Info</div>
-            <hr>
-            <div id="emails"></div>
-            <div class="titleSites">Relevant Sites</div>
-            <hr>
-            <div id="sites"></div>
+      <div class="align-self-middle medium-8 large-8 cell center splashInfo">
+        <h2>Rahul Sondhi</h2>
+        <h3><span id="typed"></span></h3>
+        <hr>
+        <h4>MBA: Operations Management</h4>
+        <h4>B.S: Computer Science</h4>
+        <h5>hungryhul@gmail.com</h5>
+      </div>
 
-          </div>
-        </div>
+    </div>
 
-        <div id="terrain">
-        </div>
+    <div id="intro" class="grid-x grid-margin-x grid-margin-y">
 
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-        <script src="js/typed.min.js"></script>
-        <script src="js/resize.js"></script>
-        <script src="js/parser.js"></script>
-        <script src="js/script.js"></script>
+      <div class="align-self-middle mainTitle medium-12 large-12 cell center seperatortitle">
+        <h2>Lets start with an introduction!</h2>
+      </div>
+
+      <div class="align-self-middle medium-6 large-4 grid-margin-y center cell">
+        <img id="bioPhotos1" src="media/Rahul1.jpg">
+        <img id="bioPhotos2" src="media/Rahul2.JPG">
+      </div>
+
+    </div>
+
+    <div id="question" class="grid-x grid-margin-x grid-margin-y">
+
+      <div class="align-self-middle mainTitle medium-12 large-12 cell center seperatortitle">
+        <h2>Here's a few common questions I tend to get.</h2>
+      </div>
+
+    </div>
+
+    <div id="education" class="grid-x grid-margin-x grid-margin-y">
+
+      <div class="align-self-middle mainTitle small-12 medium-6 large-6 cell center seperatortitle grid-margin-y">
+        <h2>These are the places I've studied at so far!</h2>
+      </div>
+
+      <div class="align-self-middle penguinAstro small-12 medium-6 large-6 cell center seperatortitle">
+
+      </div>
+
+    </div>
+
+    <div id="resume" class="grid-x grid-margin-x grid-margin-y">
+
+      <div class="align-self-middle penguinWork small-12 medium-6 large-6 cell center seperatortitle">
+
+      </div>
+
+      <div class="align-self-middle mainTitle small-12 medium-6 cell center seperatortitle">
+        <h2>I've also done a couple of jobs here and there.</h2>
+      </div>
+
+    </div>
+
+    <div id="projects" class="grid-x grid-margin-x grid-margin-y">
+
+      <div class="align-self-middle mainTitle medium-12 large-12 cell center seperatortitle">
+        <h2>Through the years, I've dabbled in a few projects.</h2>
+      </div>
+
+    </div>
+
+    <div id="contact" class="grid-x grid-margin-x grid-margin-y center">
+
+      <div class="align-self-middle mainTitle medium-12 large-12 cell center seperatortitle">
+        <h2>This is the part I give you a way to contact me.</h2>
+      </div>
+
+    </div>
 
   </div>
+
+  <div id="bottom"></div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="js/foundation.js"></script>
+
+  <script src="js/typed.min.js"></script>
+  <script src="js/parser.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>

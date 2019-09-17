@@ -6,10 +6,38 @@
       "startDate":"Feb 2018",
       "endDate":"Present",
       "description":[
-        "Taught computer science to kids from ages K-12 in a camp environment",
-        "Created challenges and lessons to teach students web development skills",
-        "Taught how to use APIs/Libraries like: JQuery, CardoDB, Firebase, Google Maps, and etc",
-        "Worked with languages like: Java, Python, HTML/CSS/JS, PHP"
+        "Teaching students from grades K-12 subjects including: Java, Python, HTML/CSS/JS, Hatch, JQuery, PHP, & Firebase",
+        "Develop challenges, pathways, and lessons for kidOYO’s online learning platform for full-stack web development skills",
+        "Lead classes teaching web development skills including backend, frontend, and proper UI/UX development"
+      ],
+      "img":"media/work.svg"
+    },
+    {
+      "title":"Co-Founder & Chair",
+      "company":"SBUHacks",
+      "startDate":"Jan 2018",
+      "endDate":"Present",
+      "description":[
+        "Created 1st Stony Brook Affiliated Hackathon with over 350 participants with only two other organizers",
+        "Spearheaded event logistics: registrations, volunteers, activities, prizes, budgets, schedules, public relations, and even site creation",
+        "Formulated and created a framework for future repetition of this event",
+        "Remodeled the campus vision and understanding of hackathon culture and the application of Computer Science to the real world"
+      ],
+      "img":"media/work.svg"
+    },
+    {
+      "title":"President",
+      "company":"Stony Brook Computing Society",
+      "startDate":"Dec 2017",
+      "endDate":"Present",
+      "description":[
+        "Created and conducted weekly general body meetings of over 100 students with engaging topics",
+        "Coordinated collaborations between 10+ organizations, 5+ campus departments, and sponsoring companies from all over",
+        "Managed and delegated tasks of eboard members to ensure every deadline and goal is reached through the organization and planning of internal Eboard Meetings",
+        "Represented the club to all external sponsorship partners while maintaining and expanding lines of organization's professional network",
+        "Directed an initiative to rebrand the view of computer science to all students, including other majors on campus",
+        "Reconstructed organization’s eboard structure for the ability to grow and maintain itself",
+        "Revised the procedures, policies, and constitution of the organization to optimize workflow and time commitment"
       ],
       "img":"media/work.svg"
     },
@@ -19,12 +47,10 @@
       "startDate":"May 2017",
       "endDate":"Aug 2018",
       "description":[
-        "Made interactive educational tools for improving learning experience in the classroom",
-        "Created an interactive e-textbook for topics like Physical Therapy and ECG Interpretation",
-        "Upgraded a video quizzing software that is used for both teaching and faculty training",
-        "Made a game using Watson APIs to let kids spawn and play with a character in VR",
-        "Created a self-assessment program that assess students writing skills in their courses",
-        "Languages used were HTML, CSS, JavaScript, jQuery, PHP, Node, C# and Aframe"
+        "Created web teaching tools for integrating new technology to the college classrooms",
+        "Managed multiple classroom software projects including but not limited to: bookMaker, IVQ, WATT",
+        "Organized community outreach events to increase department representation on campus",
+        "Languages programmed in: HTML, CSS, JavaScript, jQuery, PHP, Node, C#, Aframe, Python, Unity, and Bash"
       ],
       "img":"media/work.svg"
     }
@@ -32,12 +58,25 @@
   "education":[
     {
       "school":"Stony Brook University",
+      "degree":"Masters in Business Administration",
+      "startDate":"2019",
+      "endDate":"2020",
+      "activities":[
+        "Stony Brook Computing Society (President 2019-20)"
+      ],
+      "img":"media/school.svg"
+    },
+    {
+      "school":"Stony Brook University",
       "degree":"B.S Computer Science",
       "minor":"Minor: Business Management",
       "startDate":"2016",
-      "endDate":"2020",
+      "endDate":"2019",
       "activities":[
-        "Stony Brook Computing Society (Vice President 2018-2019 , Secretary 2017 - 2018)",
+        "Stony Brook Computing Society (President 2019-20, Vice President 2018-19 , Secretary 2017 - 18)",
+        "hack@CEWIT (Student Advisor/Organizer Feb 2018 & Feb 2019)",
+        "SBIdol (Head Logistics Chair 2018-2019)",
+        "Douglass College (Program Coordinator 2018)",
         "DoIT Student Advisory Board (Student Board Member 2017-2018)"
       ],
       "img":"media/school.svg"

@@ -1,228 +1,100 @@
-var compScroll = false;
-var userScroll = false;
-var currentState = "";
-var lastclick = 0;
-
 $(function() {
-
-  $("#stage").on("click", function() {
-    if (lastclick + 15 < Math.floor(Date.now() / 1000)) {
-      lastclick = Math.floor(Date.now() / 1000);
-      console.log("\n");
-      console.log("Seems the lights are a bit weird...");
-      $('#helpmysoul').html('<object type="image/svg+xml" data="media/landscape.svg" id="helpmysoul" class="terrain"></object>');
-    }
-  });
-
-  $(document).keydown(function(e) {
-    switch (e.which) {
-
-      case 38: // up
-        break;
-
-      case 40: // down
-        $("#goingDown").click();
-        break;
-
-      default:
-        return; // exit this handler for other keys
-    }
-    e.preventDefault(); // prevent the default action (scroll / move caret)
-  });
-
-  $(window).on("unload", function(e) {
-    updateUrl();
-  });
-
-  $(window).on('hashchange', function() {
-    updateUrl();
-  });
-
-  $(window).on("scroll", function(e) {
-    if (!compScroll) {
-      scrollDivSet($(window).scrollTop());
-    } else {
-      compScroll = false
-    }
-  });
+  setPage();
+  $(document).foundation();
 });
+
+function setPage() {
+  console.log("Project Huligan Startup!");
+  console.log("\n");
+  console.log("Loading jsons:");
+  fetchContact();
+}
+
+function setHash() {
+  var hash = window.location.href.split("#")[1];
+  $("#quickMenu>ul>li.active").removeClass("active");
+  if (hash != "" && hash != null) {
+    $("#" + hash + "Menu").addClass("active");
+
+    switch (hash) {
+      case "home":
+        $('html,body').animate({
+          scrollTop: $("#splash").offset().top
+        }, 1000);
+        $("#splashMenu").addClass("active");
+        break;
+      case "bio":
+        $('html,body').animate({
+          scrollTop: $("#intro").offset().top
+        }, 1000);
+        $("#introMenu").addClass("active");
+        break;
+      case "edu":
+        $('html,body').animate({
+          scrollTop: $("#education").offset().top
+        }, 1000);
+        $("#educationMenu").addClass("active");
+        break;
+      case "jobs":
+        $('html,body').animate({
+          scrollTop: $("#resume").offset().top
+        }, 1000);
+        $("#resumeMenu").addClass("active");
+        break;
+      case "proj":
+        $('html,body').animate({
+          scrollTop: $("#projects").offset().top
+        }, 1000);
+        $("#projectsMenu").addClass("active");
+        break;
+      case "con":
+        $('html,body').animate({
+          scrollTop: $("#contact").offset().top
+        }, 1000);
+        $("#contactMenu").addClass("active");
+        break;
+      default:
+        $('html,body').animate({
+          scrollTop: $("#splash").offset().top
+        }, 1000);
+        $("#splashMenu").addClass("active");
+        break;
+    }
+
+  }
+}
 
 function setPageBG() {
   setSky();
-  $('#terrain').html('<object type="image/svg+xml" data="media/landscape.svg" id="helpmysoul" class="terrain"></object>');
+  $('#bottom').append('<object type="image/svg+xml" data="media/landscape2.svg" id="helpmysoul" class="terrain"></object>');
 }
 
 function setSky() {
-  var currentSky = "sky-gradient-" + new Date().getHours();
-  $("#terrain").addClass(currentSky);
-  window.setTimeout(function() {
-    setSky();
-  }, 6000);
+  $('.penguinParachute').append('<object type="image/svg+xml" data="media/penguinParachute.svg"></object>');
+  $('.penguinAstro').append('<object type="image/svg+xml" data="media/penguinAtro.svg"></object>');
+  $('.cloud').append('<object type="image/svg+xml" data="media/cloud.svg"></object>');
+  $('.penguinSchool').append('<object type="image/svg+xml" data="media/penguinWork.svg"></object>');
+  $('.penguinWork').append('<object type="image/svg+xml" data="media/penguinWork.svg"></object>');
 }
 
 function pageConfig() {
-  console.log("\n");
-  console.log("Hey We All Loaded Up Now! Have Fun!");
-  setNavbar();
+  console.log("Loading Page:");
   setTyped();
-  if (window.location.hash == "" || window.location.hash == "#") {
-    window.location.hash = "home";
-  } else {
-    updateUrl();
-  }
   setPageBG();
-}
-
-function hideAllPages() {
-  $("#navbarHome").removeClass("selectedNavbar");
-  $("#navbarAbout").removeClass("selectedNavbar");
-  $("#navbarResume").removeClass("selectedNavbar");
-  $("#navbarProjects").removeClass("selectedNavbar");
-  $("#navbarContactMe").removeClass("selectedNavbar");
-}
-
-function setNavbar() {
-  $("#navbarHome").click(function() {
-    settingHash("home");
-  });
-  $("#navbarResume").click(function() {
-    settingHash("resume");
-  });
-  $("#navbarAbout").click(function() {
-    settingHash("about");
-  });
-  $("#navbarProjects").click(function() {
-    settingHash("projects");
-  });
-  $("#navbarContactMe").click(function() {
-    settingHash("contact");
+  console.log("\n");
+  console.log("Setting Hashes:");
+  setHash();
+  $(window).bind('hashchange', function(e) {
+    setHash();
   });
 }
 
-function updateUrl() {
-  var hash = window.location.hash;
-  var parse = hash.split("-");
-  var time = 3000;
-  hideAllPages();
-  var section = parse[0].substring(1);
-  switch (section) {
+function setTyped() {
 
-    case "contact":
-      $("#navbarContactMe").addClass("selectedNavbar");
-      break;
-
-    case "projects":
-      $("#navbarProjects").addClass("selectedNavbar");
-      break;
-
-    case "resume":
-      $("#navbarResume").addClass("selectedNavbar");
-      break;
-
-    case "about":
-      $("#navbarAbout").addClass("selectedNavbar");
-      break;
-
-    case "home":
-      $("#navbarHome").addClass("selectedNavbar");
-      break;
-  }
-
-  if (userScroll) {
-    userScroll = false;
-  } else {
-    settingScroll(section);
-  }
-}
-
-function settingHash(section) {
-  if (currentState != section) {
-    switch (section) {
-      case "contact":
-        window.location.hash = "contact";
-        console.log("\n");
-        console.log("Here's how you can contact me! Hit me up anytime!");
-        break;
-      case "projects":
-        window.location.hash = "projects";
-        console.log("\n");
-        console.log("These are all my projects, I've both worked on and or contributed hugely too. Have fun there are links and descriptions!");
-        break;
-      case "resume":
-        window.location.hash = "resume";
-        console.log("\n");
-        console.log("This is my experiences working so far! As I continue on with life, I'll update it!");
-        break;
-      case "about":
-        window.location.hash = "about";
-        console.log("\n");
-        console.log("Here we are with the about section. This is where I answer questions, I've been asked a million times. -_- Please dont ask me them again!");
-        break;
-      case "home":
-        window.location.hash = "home";
-        console.log("\n");
-        console.log("So this is the splash page with a little TLDR of me!");
-        break;
-    }
-    currentState = section;
-  }
-}
-
-function settingScroll(section) {
-  var offset = 0;
-  switch (section) {
-    case "contact":
-      offset = $("#contentPanelContact").offset().top;
-      break;
-    case "projects":
-      offset = $("#contentPanelProjects").offset().top;
-      break;
-    case "resume":
-      offset = $("#contentPanelResume").offset().top;
-      break;
-    case "about":
-      offset = $("#contentPanelAbout").offset().top;
-      break;
-    case "home":
-      offset = $("#contentPanelHome").offset().top;
-      break;
-  }
-
-  compScroll = true;
-  window.scrollTo(0, offset - 100);
-}
-
-function scrollDivSet(scroll) {
-  userScroll = true;
-  scroll += 250;
-  // console.log(scroll,$(window).scrollTop())
-
-  if (scroll <= $("#contentPanelAbout").offset().top) {
-    settingHash("home");
-
-  } else if (scroll <= $("#contentPanelResume").offset().top) {
-    // console.log("About:",$("#contentPanelAbout").offset().top)
-    settingHash("about");
-
-  } else if (scroll <= $("#contentPanelProjects").offset().top) {
-    // console.log("Resume:",$("#contentPanelResume").offset().top)
-    settingHash("resume");
-
-  } else if (scroll <= $("#contentPanelContact").offset().top - $("#contentPanelContact").height() * 0.825) {
-    // console.log("Projects:",$("#contentPanelProjects").offset().top)
-    settingHash("projects");
-  } else {
-    // console.log("Contact:",$("#contentPanelContact").offset().top)
-    settingHash("contact");
-  }
-}
-
-function setTyped(){
-
-  var type = new Typed("#typed",{
+  var type = new Typed("#typed", {
     // Change to edit type effect
-    strings: ["Full Stack Developer", "Selfie Master", "kidOYO Mentor","Living Meme","SBUHacks Co-Founder", "Hooligan", "SBCS Vice President", "24/7 Enthusiasm", "Undergrad Student", "Penguin Lover","Entrepreneur"],
-    typeSpeed: 90,
+    strings: ["Cooking Enthusiast", "Computer Science Student", "Project Manager", "Full Stack Developer", "MBA Graduate Student", "kidOYO Mentor", "OYOClass Intern", "SBUHacks Co-Founder", "Hooligan", "SBCS President", "Unexplainably Energetic", "Fusion of Tech God and Businessman", "Penguin Lover", "Entrepreneur"],
+    typeSpeed: 150,
     backDelay: 1500,
     loop: !0,
     resetCallback: function() {
@@ -230,4 +102,5 @@ function setTyped(){
     }
   });
 
+  console.log("Typed Setup");
 }

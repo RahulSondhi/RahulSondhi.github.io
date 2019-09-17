@@ -1,151 +1,44 @@
-$(function() {
-  setPage();
-});
-
-function setPage() {
-  console.log("Welcome to my console!");
-  console.log("\n");
-  console.log("Loading jsons:");
-  fetchContact();
-}
+var baseUrl = window.location.href.split("#")[0];
 
 function fetchContact() {
 
   $.ajax({
-    url: "https://rahulsondhi.github.io/json/contact.json",
+    url: "" + baseUrl + "json/contact.json",
     error: function(jqXHR, textStatus, errorThrown) {
       console.log(jqXHR, textStatus, errorThrown);
     }
   }).done(function(data) {
     console.log("Contacts Loaded!");
     setContact(data)
-    fetchProjects();
+    fetchQuestions();
   });
 
 }
 
+
 function setContact(contacts) {
-  var emails = contacts.emails;
-  var sites = contacts.sites;
   var socialMedia = contacts.socialMedia;
 
-  for (var i = 0; i < emails.length; i++) {
-    var email = $("<div></div>");
-    email.attr("class", "titleContactInfo");
-    email.html(emails[i]);
-
-    $("#emails").append(email);
-  }
-
-  for (var i = 0; i < sites.length; i++) {
-    var site = $("<a></a>");
-    site.attr("class", "titleSiteInfo");
-    site.attr("onclick", "{ window.open('" + sites[i].link + "','_blank');}");
-    site.html(sites[i].title);
-
-    $("#sites").append(site);
-  }
+  var leftBlocker = $("<div></div>");
+  leftBlocker.attr("class", "medium-2 large-4 cell center");
+  $("#contact").append(leftBlocker);
 
   for (var i = 0; i < socialMedia.length; i++) {
-    var socialLogo = $("<div></div>");
-    socialLogo.attr("class", "socialLogo");
 
     var socialLogoImg = $("<img></img>");
     socialLogoImg.attr("src", socialMedia[i].img);
-    socialLogoImg.attr("class", "socialLogoPic");
+    socialLogoImg.attr("class", "socialLogoPic medium-2 large-1 cell center");
     socialLogoImg.attr("onclick", "{window.open('" + socialMedia[i].link + "','_blank');}");
 
-    socialLogo.append(socialLogoImg);
-    $("#contactLeft").append(socialLogo);
+    $("#contact").append(socialLogoImg);
   }
 
-}
-
-function fetchProjects() {
-
-  $.ajax({
-    url: "https://api.github.com/users/RahulSondhi"
-  }).done(function(user) {
-    console.log("Github User Loaded!");
-    $.ajax({
-      url: "https://api.github.com/users/SBUtltmedia/repos?per_page=100"
-    }).done(function(repos) {
-      $.ajax({
-        url: "https://api.github.com/users/RahulSondhi/repos?per_page=100"
-      }).done(function(data) {
-        console.log("Github Projects Loaded!");
-        setProjects(data, user, repos);
-        fetchQuestions();
-      });
-    });
-  });
-
-}
-
-function setProjects(projects, user, repos) {
-
-  var tll = ["bookMaker","Self-Assessment","VRWatsonVive","VQ","Mainhub"];
-
-  for (var i = 0; i < repos.length; i++) {
-      if(tll.indexOf(repos[i].name) > -1){
-        projects.unshift(repos[i])
-      }
-  }
-
-  var gitContainer = $("<div></div>");
-  gitContainer.attr("id", "projectGit");
-
-  var userWindow = $("<div></div>");
-  userWindow.attr("id", "userContainer");
-
-  var userWindowImg = $("<img></img>");
-  userWindowImg.attr("src", user.avatar_url);
-  userWindowImg.attr("class", "gitIcon");
-
-  var userWindowTitle = $("<div></div>");
-  userWindowTitle.attr("class", "gitTitle");
-  userWindowTitle.html(user.login);
-
-  var userWindowBio = $("<div></div>");
-  userWindowBio.attr("class", "gitBio");
-  userWindowBio.html(user.bio);
-
-  userWindow.append(userWindowImg);
-  userWindow.append(userWindowTitle);
-  userWindow.append(userWindowBio);
-
-  $("#contentPanelProjects").append(userWindow);
-  $("#contentPanelProjects").append(gitContainer);
-
-  for (var i = 0; i < projects.length; i++) {
-    var projectDiv = $("<div></div>");
-    projectDiv.attr("class", "projectContainer");
-    projectDiv.attr("onclick", "{window.open('" + projects[i].html_url + "','_blank');}")
-
-    var projectDivTitle = $("<div></div>");
-    projectDivTitle.attr("class", "projectTitle");
-    projectDivTitle.html(projects[i].name);
-
-    var projectDivDescription = $("<div></div>");
-    projectDivDescription.attr("class", "projectDescription");
-    projectDivDescription.html(projects[i].description);
-
-    var projectDivLanguage = $("<div></div>");
-    projectDivLanguage.attr("class", "projectLanguage");
-    projectDivLanguage.html(projects[i].language);
-
-    projectDiv.append(projectDivTitle);
-    projectDiv.append(projectDivDescription);
-    projectDiv.append(projectDivLanguage);
-
-    $("#projectGit").append(projectDiv);
-  }
 }
 
 function fetchQuestions() {
 
   $.ajax({
-    url: "https://rahulsondhi.github.io/json/questions.json"
+    url: "" + baseUrl + "json/questions.json"
   }).done(function(data) {
     console.log("Questions Loaded!");
     setQuestion(data)
@@ -155,10 +48,16 @@ function fetchQuestions() {
 }
 
 function setQuestion(questions) {
+
+  var bioDiv = $("<div></div>");
+  bioDiv.attr("class", "align-self-middle medium-6 large-8 cell center bio");
+  bioDiv.html(questions.bio);
+  $("#intro").append(bioDiv);
+
   var questionsToAdd = questions.questions;
   for (var i = 0; i < 6; i++) {
     var questionDiv = $("<div></div>");
-    questionDiv.attr("class", "question");
+    questionDiv.attr("class", "medium-6 large-4 cell center question");
     var questionDivText = $("<div></div>");
     questionDivText.attr("class", "questionText");
     questionDivText.html(questionsToAdd[i].questionText);
@@ -168,22 +67,18 @@ function setQuestion(questions) {
     questionDiv.append(questionDivText);
     questionDiv.append("<hr>");
     questionDiv.append(questionDivAnswer);
-    if (i < 3) {
-      $("#aboutMeLeft").append(questionDiv);
-    } else {
-      $("#aboutMeRight").append(questionDiv);
-    }
+    $("#question").append(questionDiv);
   }
 }
 
 function fetchResume() {
 
   $.ajax({
-    url: "https://rahulsondhi.github.io/json/resume.json"
+    url: "" + baseUrl + "json/resume.json"
   }).done(function(data) {
     console.log("Resume Loaded!");
     setResume(data);
-    pageConfig();
+    fetchProjects();
   });
 
 }
@@ -192,16 +87,70 @@ function setResume(data) {
   var jobs = data.jobs;
   var schools = data.education;
 
-  var educationHolder = $("<div></div>");
-  educationHolder.attr("class", "educationHolder");
+  setJobs(jobs);
+  setSchools(schools);
+
+}
+
+function setSchools(schools) {
+  for (var i = 0; i < schools.length; i++) {
+    var school = $("<div></div>");
+    school.attr("class", "school medium-12 large-12 cell grid-x grid-padding-x grid-margin-y");
+
+    var schoolTitle = $("<span></span>");
+    schoolTitle.attr("class", "schoolSchool");
+    schoolTitle.html(schools[i].school);
+
+    var schoolMinor = $("<span></span>");
+    schoolMinor.attr("class", "schoolMinor");
+    schoolMinor.html(schools[i].minor);
+
+    var schoolDegree = $("<span></span>");
+    schoolDegree.attr("class", "schoolDegree");
+    schoolDegree.html(schools[i].degree);
+
+    var schoolDate = $("<span></span>");
+    schoolDate.attr("class", "schoolDate");
+    schoolDate.html(schools[i].startDate + " - " + schools[i].endDate);
+
+    var schoolDescription = $("<div></div>");
+    schoolDescription.attr("class", "schoolDescription medium-12 large-12 cell");
+    if (schoolMinor.html() == "") {
+      schoolDescription.html(schoolTitle.html() + "<br>" + schoolDegree.html() + "<br>" + schoolDate.html() + "<br>");
+    } else {
+      schoolDescription.html(schoolTitle.html() + "<br>" + schoolDegree.html() + "<br>" + schoolMinor.html() + "<br>" + schoolDate.html() + "<br>");
+    }
+
+    var schoolActivities = $("<div></div>");
+    schoolActivities.attr("class", "schoolActivities medium-12 large-12 cell");
+    schoolActivities.append("<u>Activities</u><br>");
+
+    for (var x = 0; x < schools[i].activities.length; x++) {
+      schoolActivities.append("- " + schools[i].activities[x] + "<br>");
+    }
+
+    var schoolPhoto = $("<img></img>");
+    schoolPhoto.attr("class", "schoolPhoto medium-3 large-3 cell");
+    schoolPhoto.attr("src", schools[i].img);
+
+    var schoolTopLeft = $("<div></div>");
+    schoolTopLeft.attr("class", "medium-9 large-9 cell grid-x grid-padding-x align-middle");
+
+    schoolTopLeft.append(schoolDescription);
+    schoolTopLeft.append(schoolActivities);
+
+    school.append(schoolPhoto);
+    school.append(schoolTopLeft);
 
 
-  var jobHolder = $("<div></div>");
-  jobHolder.attr("class", "jobHolder");
+    $("#education").append(school);
+  }
+}
 
+function setJobs(jobs) {
   for (var i = 0; i < jobs.length; i++) {
     var experience = $("<div></div>");
-    experience.attr("class", "jobContainer");
+    experience.attr("class", "job medium-12 large-12 cell grid-x grid-padding-x");
 
     var experienceTitle = $("<div></div>");
     experienceTitle.attr("class", "jobTitle");
@@ -211,93 +160,104 @@ function setResume(data) {
     experienceCompany.attr("class", "jobCompany");
     experienceCompany.html(jobs[i].company);
 
-    var experiencePhoto = $("<img></img>");
-    experiencePhoto.attr("class", "jobPhoto");
-    experiencePhoto.attr("src", jobs[i].img);
-
     var experienceDate = $("<div></div>");
     experienceDate.attr("class", "jobDate");
     experienceDate.html(jobs[i].startDate + " - " + jobs[i].endDate);
 
     var experienceDescription = $("<div></div>");
-    experienceDescription.attr("class", "jobDescription");
+    experienceDescription.attr("class", "jobDescription medium-12 large-12 cell");
+    experienceDescription.html(experienceTitle.html() + "<br>" + experienceCompany.html() + "<br>" + experienceDate.html());
+
+
+    var experienceActivities = $("<div></div>");
+    experienceActivities.attr("class", "jobActivities medium-12 large-12 cell");
+    experienceActivities.append("<u>Description</u><br>");
+
     for (var x = 0; x < jobs[i].description.length; x++) {
-      experienceDescription.append("- " + jobs[i].description[x] + "<br>");
+      experienceActivities.append("- " + jobs[i].description[x] + "<br>");
     }
-
-    var experienceTop = $("<div></div>");
-    experienceTop.attr("class", "jobTop");
-
-    var experienceTopLeft = $("<div></div>");
-    experienceTopLeft.attr("class", "jobTopLeft");
-
-    experienceTopLeft.append(experienceTitle);
-    experienceTopLeft.append(experienceCompany);
-    experienceTopLeft.append(experienceDate);
-
-    experienceTop.append(experienceTopLeft);
-    experienceTop.append(experiencePhoto);
-
-    experience.append(experienceTop);
-    experience.append(experienceDescription);
-
-    jobHolder.append(experience);
-  }
-
-  ////////////////////////////////////////////////////////////////////
-
-  for (var i = 0; i < schools.length; i++) {
-    var experience = $("<div></div>");
-    experience.attr("class", "schoolContainer");
-
-    var experienceTitle = $("<div></div>");
-    experienceTitle.attr("class", "schoolSchool");
-    experienceTitle.html(schools[i].school);
-
-    var experienceMinor = $("<div></div>");
-    experienceMinor.attr("class", "schoolMinor");
-    experienceMinor.html(schools[i].minor);
-
-    var experienceCompany = $("<div></div>");
-    experienceCompany.attr("class", "schoolDegree");
-    experienceCompany.html(schools[i].degree);
 
     var experiencePhoto = $("<img></img>");
-    experiencePhoto.attr("class", "schoolPhoto");
-    experiencePhoto.attr("src", schools[i].img);
-
-    var experienceDate = $("<div></div>");
-    experienceDate.attr("class", "schoolDate");
-    experienceDate.html(schools[i].startDate + " - " + schools[i].endDate);
-
-    var experienceDescription = $("<div></div>");
-    experienceDescription.attr("class", "schoolActivities");
-    experienceDescription.append("<u>Activities</u><br>");
-
-    for (var x = 0; x < schools[i].activities.length; x++) {
-      experienceDescription.append("- " + schools[i].activities[x] + "<br>");
-    }
-
-    var experienceTop = $("<div></div>");
-    experienceTop.attr("class", "schoolTop");
+    experiencePhoto.attr("class", "jobPhoto medium-3 large-3 cell");
+    experiencePhoto.attr("src", jobs[i].img);
 
     var experienceTopLeft = $("<div></div>");
-    experienceTopLeft.attr("class", "schoolTopLeft");
+    experienceTopLeft.attr("class", "medium-9 large-9 cell grid-x grid-padding-x align-middle");
 
-    experienceTopLeft.append(experienceTitle);
-    experienceTopLeft.append(experienceCompany);
-    experienceTopLeft.append(experienceMinor);
-    experienceTopLeft.append(experienceDate);
+    experienceTopLeft.append(experienceDescription);
+    experienceTopLeft.append(experienceActivities);
 
-    experienceTop.append(experienceTopLeft);
-    experienceTop.append(experiencePhoto);
+    experience.append(experiencePhoto);
+    experience.append(experienceTopLeft);
 
-    experience.append(experienceTop);
-    experience.append(experienceDescription);
-
-    educationHolder.append(experience);
+    $("#resume").append(experience);
   }
+}
 
-  $("#contentPanelResume").append(educationHolder);
-  $("#contentPanelResume").append(jobHolder);
+function fetchProjects() {
+
+  $.ajax({
+    url: "" + baseUrl + "json/projects.json"
+  }).done(function(projects) {
+    console.log("Github Projects Loaded!");
+    setProjects(projects);
+    pageConfig();
+  });
+
+}
+
+
+function setProjects(projects) {
+
+
+  var userWindow = $("<div></div>");
+  userWindow.attr("id", "userContainer");
+  userWindow.attr("class", "medium-12 large-12 cell center grid-x grid-padding-x align-middle");
+
+  var userWindowImg = $("<img></img>");
+  userWindowImg.attr("src", "media/digiHul.png");
+  userWindowImg.attr("class", "medium-4 medium-offset-4 large-4 large-offset-4 cell gitIcon");
+
+  var userWindowBuffer = $("<div></div>");
+  userWindowBuffer.attr("class", "medium-3 large-4 cell");
+
+  var userWindowTitle = $("<div></div>");
+  userWindowTitle.attr("class", "medium-4 medium-offset-4 large-4 large-offset-4 cell gitTitle");
+  userWindowTitle.html("RahulSondhi");
+
+  userWindow.append(userWindowImg);
+  userWindow.append(userWindowBuffer);
+  userWindow.append(userWindowTitle);
+
+  $("#projects").append(userWindow);
+
+  for (var i = 0; i < projects.length; i++) {
+    var projectDiv = $("<div></div>");
+    projectDiv.attr("class", "projectContainer medium-6 large-4 cell");
+    projectDiv.attr("onclick", "{window.open('" + projects[i].html_url + "','_blank');}")
+
+    var projectDivTitle = $("<div></div>");
+    projectDivTitle.attr("class", "projectTitle");
+    projectDivTitle.html(projects[i].name);
+
+    var projectDivDescription = $("<div></div>");
+    projectDivDescription.attr("class", "projectDescription");
+    if (projects[i].description != null) {
+      projectDivDescription.html(projects[i].description);
+    } else {
+      projectDivDescription.html("No Description Available");
+    }
+    var projectDivLanguage = $("<div></div>");
+    projectDivLanguage.attr("class", "projectLanguage");
+    if (projects[i].language != null) {
+      projectDivLanguage.html("<u>Language(s):</u> " + projects[i].language);
+    } else {
+      projectDivLanguage.html("<u>Language(s):</u> Unavailable");
+    }
+    projectDiv.append(projectDivTitle);
+    projectDiv.append(projectDivLanguage);
+    projectDiv.append(projectDivDescription);
+
+    $("#projects").append(projectDiv);
+  }
 }
