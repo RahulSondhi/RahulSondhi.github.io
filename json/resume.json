@@ -2,7 +2,7 @@
   "jobs": [
     {
       "title":"Mentor",
-      "company":"kidOYO",
+      "company":"OYOClass",
       "startDate":"Feb 2018",
       "endDate":"Present",
       "description":[
@@ -19,9 +19,11 @@
       "endDate":"Present",
       "description":[
         "Created 1st Stony Brook Affiliated Hackathon with over 350 participants with only two other organizers",
+        "Lead meetings of over 5 different university departments collaborating on event",
         "Spearheaded event logistics: registrations, volunteers, activities, prizes, budgets, schedules, public relations, and even site creation",
         "Formulated and created a framework for future repetition of this event",
-        "Remodeled the campus vision and understanding of hackathon culture and the application of Computer Science to the real world"
+        "Remodeled the campus vision and understanding of hackathon culture and the application of Computer Science to the real world",
+        "Developed SBUHacks website for promoting event (sbuhacks.org)"
       ],
       "img":"media/work.svg"
     },
